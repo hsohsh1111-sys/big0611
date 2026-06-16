@@ -1,0 +1,6 @@
+1. 브라우저: 크롬
+2. IDE: VSCode
+3. 저장소
+- 로컬: big0611
+- 서버: Github -> repository(저장소)
+4. 마크다운 언어
