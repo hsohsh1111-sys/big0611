@@ -1,16 +1,6 @@
-1. 브라우저: 크롬
-2. IDE: VSCode
-3. 저장소
-- 로컬: big0611
-- 서버: Github -> repository(저장소)
-4. 마크다운 언어
-5. 깃허브 페이지
--> 내 개인사이트로 만들기
--> 업로드 제한: 1파일 100MB, 전체 2GB 이하
-6. codelaba.netlify.app
--> 교육 사이트(수업 중 또는 수업 종료 후 복습용 참고!)
-7. Github Desktop
-
-
-나의 도메인
-hsohsh1111-sys.github.io/big0611/
+0. 파이썬 가상환경 설정: .venv
+1. 로그아웃하기
+2. 깃 설치하기
+3. 깃허브 업로드
+add(에드) & commit(커밋): 커밋 메시지
+ -> push(푸시)
