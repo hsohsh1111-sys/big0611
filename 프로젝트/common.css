@@ -1,0 +1,548 @@
+/* ===================================================================
+   집찾Go(ZipChatGo) Real Estate Platform
+   File : common.css
+   Description : 공통 디자인 시스템
+   Version : 1.0
+=================================================================== */
+
+/* ==========================
+   Google Font
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* ==========================
+   CSS Variables
+========================== */
+
+:root{
+
+    /* ===== Brand Color ===== */
+
+    --primary:#0F4C81;
+    --primary-dark:#0B3961;
+
+    --secondary:#2C7A7B;
+    --secondary-dark:#225F60;
+
+    --accent:#F59E0B;
+
+    /* ===== Background ===== */
+
+    --background:#F8FAFC;
+
+    --surface:#FFFFFF;
+
+    --footer-bg:#18232F;
+
+    --header-bg:#FFFFFF;
+
+    /* ===== Text ===== */
+
+    --text-main:#1F2937;
+
+    --text-sub:#6B7280;
+
+    --text-white:#FFFFFF;
+
+    --text-light:#BFC7D1;
+
+    /* ===== Border ===== */
+
+    --border:#E5E7EB;
+
+    --border-dark:#304252;
+
+    /* ===== Font ===== */
+
+    --font-title:'Montserrat',sans-serif;
+
+    --font-body:'Noto Sans KR',sans-serif;
+
+    /* ===== Radius ===== */
+
+    --radius-sm:6px;
+
+    --radius-md:12px;
+
+    --radius-lg:20px;
+
+    --radius-xl:32px;
+
+    /* ===== Shadow ===== */
+
+    --shadow-sm:0 2px 6px rgba(0,0,0,.08);
+
+    --shadow-md:0 8px 24px rgba(0,0,0,.12);
+
+    --shadow-lg:0 16px 40px rgba(0,0,0,.18);
+
+    /* ===== Transition ===== */
+
+    --transition:.3s ease;
+
+    /* ===== Container ===== */
+
+    --container-max:1320px;
+
+    /* ===== Bootstrap Breakpoints ===== */
+
+    --sm:576px;
+
+    --md:768px;
+
+    --lg:992px;
+
+    --xl:1200px;
+
+    --xxl:1400px;
+
+}
+
+/* ==========================
+   Reset
+========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--font-body);
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:var(--text-main);
+
+    background:var(--background);
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+input,
+textarea,
+select{
+
+    outline:none;
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+    font-family:var(--font-body);
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .15rem rgba(15,76,129,.15);
+
+}
+
+/* ==========================
+   Typography
+========================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-title);
+
+    color:var(--text-main);
+
+    font-weight:700;
+
+    margin-bottom:.8rem;
+
+}
+
+p{
+
+    color:var(--text-sub);
+
+    margin-bottom:1rem;
+
+}
+
+/* ==========================
+   Container
+========================== */
+
+.container-custom{
+
+    max-width:1320px;
+
+    margin:auto;
+
+}
+
+/* ==========================
+   Common Button
+========================== */
+
+.btn-main{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:12px 26px;
+
+    border-radius:var(--radius-md);
+
+    font-weight:600;
+
+}
+
+.btn-main:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    padding:12px 26px;
+
+    border-radius:var(--radius-md);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--secondary-dark);
+
+}
+
+.btn-outline{
+
+    background:#fff;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    padding:12px 26px;
+
+    border-radius:var(--radius-md);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================
+   Card
+========================== */
+
+.card-custom{
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card-custom:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================
+   Link
+========================== */
+
+.link-primary{
+
+    color:var(--primary);
+
+}
+
+.link-primary:hover{
+
+    color:var(--accent);
+
+}
+
+/* ==========================
+   Badge
+========================== */
+
+.badge-main{
+
+    background:var(--accent);
+
+    color:#fff;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+}
+
+/* ==========================
+   Utility
+========================== */
+
+.text-primary{
+
+    color:var(--primary)!important;
+
+}
+
+.text-secondary{
+
+    color:var(--secondary)!important;
+
+}
+
+.text-accent{
+
+    color:var(--accent)!important;
+
+}
+
+.bg-primary{
+
+    background:var(--primary)!important;
+
+}
+
+.bg-secondary{
+
+    background:var(--secondary)!important;
+
+}
+
+.bg-footer{
+
+    background:var(--footer-bg)!important;
+
+}
+
+.shadow-custom{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.radius{
+
+    border-radius:var(--radius-md);
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ECECEC;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================
+   Selection
+========================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width:1400px){
+
+}
+
+@media (max-width:1200px){
+
+}
+
+@media (max-width:992px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:14px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    h1{
+
+        font-size:1.9rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    h3{
+
+        font-size:1.35rem;
+
+    }
+
+}

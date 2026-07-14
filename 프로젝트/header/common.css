@@ -1,0 +1,556 @@
+/* ==========================================================
+   집찾Go 부동산 플랫폼
+   common.css
+   Author : ChatGPT
+   Version : 1.0
+========================================================== */
+
+/* ==========================================================
+   Google Fonts
+========================================================== */
+@charset "UTF-8";
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap'); */
+
+
+/* ==========================================================
+   CSS Variables
+========================================================== */
+
+:root{
+
+    /* Brand Colors */
+
+    --primary:#2563EB;
+    --primary-dark:#1E40AF;
+
+    --secondary:#0F172A;
+
+    --accent:#14B8A6;
+
+    --success:#22C55E;
+
+    --danger:#EF4444;
+
+    --warning:#F59E0B;
+
+    --info:#38BDF8;
+
+
+    /* Gray */
+
+    --gray-50:#F8FAFC;
+    --gray-100:#F1F5F9;
+    --gray-200:#E2E8F0;
+    --gray-300:#CBD5E1;
+    --gray-400:#94A3B8;
+    --gray-500:#64748B;
+    --gray-600:#475569;
+    --gray-700:#334155;
+    --gray-800:#1E293B;
+    --gray-900:#0F172A;
+
+
+    /* Text */
+
+    --text-dark:#111827;
+    --text-light:#6B7280;
+    --text-white:#FFFFFF;
+
+
+    /* Background */
+
+    --bg-white:#FFFFFF;
+    --bg-light:#F8FAFC;
+    --bg-dark:#0F172A;
+
+
+    /* Typography */
+
+    --font-title:'Poppins',sans-serif;
+    --font-body:'Noto Sans KR',sans-serif;
+
+
+    /* Font Size */
+
+    --fs-xs:.75rem;
+    --fs-sm:.875rem;
+    --fs-md:1rem;
+    --fs-lg:1.125rem;
+    --fs-xl:1.25rem;
+    --fs-2xl:1.5rem;
+    --fs-3xl:2rem;
+    --fs-4xl:2.75rem;
+    --fs-5xl:3.5rem;
+
+
+    /* Radius */
+
+    --radius-sm:6px;
+    --radius-md:10px;
+    --radius-lg:16px;
+    --radius-xl:24px;
+    --radius-pill:999px;
+
+
+    /* Shadow */
+
+    --shadow-sm:0 2px 8px rgba(0,0,0,.05);
+
+    --shadow-md:0 8px 20px rgba(0,0,0,.08);
+
+    --shadow-lg:0 15px 35px rgba(0,0,0,.15);
+
+    --shadow-xl:0 20px 50px rgba(0,0,0,.18);
+
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+
+    /* Header */
+
+    --header-height:90px;
+
+}
+
+
+/* ==========================================================
+   Reset
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--font-body);
+
+    color:var(--text-dark);
+
+    background:var(--bg-light);
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+
+}
+
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+
+}
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+
+input{
+
+    outline:none;
+
+}
+/* ==========================================================
+   Layout
+========================================================== */
+
+.container-xxl{
+    max-width:1400px;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.section-sm{
+    padding:70px 0;
+}
+
+.section-title{
+
+    font-family:var(--font-title);
+
+    font-size:var(--fs-3xl);
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+    color:var(--secondary);
+
+}
+
+.section-subtitle{
+
+    color:var(--gray-500);
+
+    font-size:var(--fs-lg);
+
+    margin-bottom:50px;
+
+}
+
+
+/* ==========================================================
+   Button
+========================================================== */
+
+.btn-jip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.6rem;
+
+    padding:.9rem 1.8rem;
+
+    border-radius:var(--radius-pill);
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-jip:hover{
+
+    background:var(--primary-dark);
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+
+.btn-outline-jip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.9rem 1.8rem;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    border-radius:var(--radius-pill);
+
+    transition:var(--transition);
+
+}
+
+.btn-outline-jip:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+/* ==========================================================
+   Card
+========================================================== */
+
+.card-jip{
+
+    background:#fff;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card-jip:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* ==========================================================
+   Utility
+========================================================== */
+
+.text-primary{
+
+    color:var(--primary)!important;
+
+}
+
+.text-accent{
+
+    color:var(--accent)!important;
+
+}
+
+.bg-primary{
+
+    background:var(--primary)!important;
+
+}
+
+.bg-accent{
+
+    background:var(--accent)!important;
+
+}
+
+.rounded-xl{
+
+    border-radius:var(--radius-xl);
+
+}
+
+.shadow-lg{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+/* ==========================================================
+   Glass Effect
+========================================================== */
+
+.glass{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+
+/* ==========================================================
+   Animation
+========================================================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.zoom-in{
+
+    animation:zoomIn .8s ease forwards;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Scrollbar
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:1400px){
+
+    .section{
+
+        padding:90px 0;
+
+    }
+
+}
+
+@media (max-width:1200px){
+
+    .section{
+
+        padding:80px 0;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    :root{
+
+        --header-height:80px;
+
+    }
+
+    .section-title{
+
+        font-size:2rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .section{
+
+        padding:60px 0;
+
+    }
+
+    .section-title{
+
+        font-size:1.75rem;
+
+    }
+
+    .section-subtitle{
+
+        font-size:1rem;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    body{
+
+        font-size:.95rem;
+
+    }
+
+    .btn-jip,
+    .btn-outline-jip{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

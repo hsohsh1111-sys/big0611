@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* 구글: https://fonts.google.com/selection/embed */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* 눈누: https://noonnu.cc/font_page/37 */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Style Guides */
+:root {
+    /* font */
+    --ff: 'NanumSquare', 'Noto Sans KR', sans-serif;
+    --fz-xs: 0.75rem; /* 12px */
+    --fz-sm: 0.875rem; /* 14px */
+    --fz-md: 1rem; /* 16px */
+    --fz-lg: 1.125rem; /* 18px */
+    --fz-xl: 1.25rem; /* 20px */
+
+    /* color */
+    --c-primary: #006AC9;
+    --c-secondary: #6C757D;
+    --c-accent: #FF600D;
+    --c-white: #f8f9fa;
+    --c-txt: #333;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box; /* bx */
+}
+body,h1,h2,h3,p,ul {
+    margin: 0; /* m0 */
+}
+ul {
+    list-style: none; /* lisn */
+    padding: 0; /* p0 */
+}
+a {
+    text-decoration: none; /* tdn */
+    color: var(--c-txt); /* c */
+}
+
+body {
+    font-family: var(--ff);
+    line-height: 1.6;  
+    font-size: 1rem;  
+    font: var(--fz-md)/1.6 var(--ff);
+    color: var(--c-txt); /* c */
+    background: var(--c-white); /* bg */
+}

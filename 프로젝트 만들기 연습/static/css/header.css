@@ -1,0 +1,125 @@
+@charset "utf-8";
+@import url(./common.css);
+
+/* 공사중... */
+body * {outline:1px dotted #00ff00;}
+
+header {    
+    background: var(--c-primary);
+    
+}
+header a {
+    color: var(--c-white);
+}
+/* Layout */
+.container {
+    display: flex; /* df */
+    justify-content: space-between; /* jcsb */
+    align-items: center; /* aic */
+    height: 95px; /* h95px */
+    padding: 0 50px; /* p0-50 */
+}
+
+/* Logo */
+.logo{
+    width: 207px; /* w207 */
+    height: 69px; /* h69 */
+    font-size: 1.375rem; /* fz22 */    
+    text-align: center; /* tac */
+    letter-spacing: 0.3rem; /* ls.2rem */
+}
+.logo span {
+    display: block; /* db */
+    font-size: va /* fz14 */
+    letter-spacing: 0.2rem; /* ls.2rem */
+}
+h1 {
+    width: 207px; /* w207 */
+    height: 69px;
+    font-size: var(--fz-xl); /* fz */
+    letter-spacing: 0.2rem; /* ls.2rem */
+    line-height: 1.3; /* lh1.3 */
+    text-align: center; /* tac */
+}
+h1 span {
+    display: block; /* db */
+    font-size: var(--fz-sm); /* fz */
+}
+
+/* GNB */
+.depth1 {
+    display: flex; /* df */
+    gap: 4.6875rem;
+    text-align: center;
+}
+.depth1 > li > a {
+    font-size:var(--fz-lg);
+}
+.depth2 {
+    /* display: none; */ /* dn */
+    position: absolute;
+    padding-top: 50px;
+    overflow: hidden;
+    height: 0;
+}
+.depth2.active {
+    height: 200px;
+}
+
+.depth2 li a {
+    color: #333;
+}
+.sub-bg {
+    background: var(--color-secondary);
+    width: 100%;
+    height: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.sns::after { 
+    display:block;
+    content: ""; /* c */
+    width:4px;
+    height:4px;
+    background: var(--c-white); /* bg */
+    border-radius: 50%; /* br50 */
+    margin-left: 8px;
+}
+.sns-link {
+    position: relative;    
+}
+.sns-link span {
+    opecity: 1;
+    transition: 0.2s; 
+}
+.sns:hover .sns-link span {
+    opecity: 1;
+}
+.sns-link ::before {
+    content: "\f167";
+    font-family: "Font Awesome 6 Brands"; /c */
+    font-size: 28px; /* fz */
+    color:#f00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opecity: 0;
+}
+.sns:hover .sns-link::before {
+    opacity: 1;
+}
+/* Util */
+.util {
+    display: flex;
+    gap: 15px;
+}
+.login {
+    diplay: flex; /* df */
+    gap: 15px; gap15
+    font-size: var(--fz-sm); /* fz */
+}
+.login > a:first-child {
+    margin-right: 15px/ * mr15 */    
+}

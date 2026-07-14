@@ -1,0 +1,13 @@
+numpy
+pandas
+yfinance
+seaborn
+matplotlib
+plotly
+nbformat
+streamlit
+requests
+beautifulsoup4
+selenium
+scikit-learn
+tensorflow
