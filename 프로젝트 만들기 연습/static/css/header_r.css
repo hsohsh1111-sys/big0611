@@ -1,0 +1,468 @@
+@charset "utf-8";
+@import url(common.css);
+
+/* =========================================================
+   [모바일 우선 변경] 기본 모바일 스타일 (< 576px 스마트폰 세로화면 기준)
+   - 모바일 오프캔버스 메뉴, 햄버거 버튼, 모바일 전용 유틸을 기본값으로 설정
+========================================================= */
+
+#header {
+    background: var(--color-primary);
+    padding: 0 15px; /* [모바일 우선 변경] 기존 xs, sm 구간 최소 좌우 여백(15px)을 기본값으로 설정 */
+    position: relative; /* [추가] sub-bg의 절대 좌표 기준점 설정을 위해 추가 */
+}
+#header a {
+    color: var(--color-white);
+}
+.container {
+    height: 70px; /* [수정/모바일 우선 변경] 모바일/태블릿 헤더 높이(70px)를 기본값으로 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: auto; /* [추가/모바일 우선 변경] 모바일에서 로고 너비 자동을 기본값으로 설정 */
+    font-size: 1.1rem; /* [수정/모바일 우선 변경] 모바일 기본 로고 크기 살짝 축소 (1.1rem) */
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+.logo span {
+    display: block;
+    font-size: var(--fz-sm);
+}
+
+/* [추가] 모바일 전용 메뉴 헤더 (PC 데스크톱에서는 숨김 -> 모바일 기본 표시로 변경) */
+.gnb-header {
+    display: flex; /* [모바일 우선 변경] 모바일에서 기본적으로 표시 */
+    align-items: center;
+    justify-content: space-between;
+    height: 70px; /* [추가] 모바일 헤더 높이(70px)와 일치시킴 */
+    padding: 0 18px; /* [추가] 상단 햄버거 버튼 좌우 여백과 맞춤 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0; /* [추가] 스크롤 시에도 헤더 높이 고정 */
+}
+/* 닫기 버튼 */
+.btn-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer; /* cup */
+    line-height: 1;
+    padding: 0 5px;
+}
+
+/* [추가] 모바일 전용 오프캔버스 내부 로고, 화살표 아이콘, 하단 유틸 영역 (모바일 기본 표시) */
+.gnb-logo-area {
+    display: block; /* [모바일 우선 변경] */
+    padding: 25px 0 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* fxs0: 스크롤 시에도 로고 영역 높이 고정 */
+}
+.gnb-logo-area .logo-mobile a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+.gnb-logo-area .logo-mobile span {
+    font-size: 0.8rem;
+    display: block;
+    color: #aaa;
+    letter-spacing: normal;
+    margin-top: 4px;
+}
+
+/* [추가] 모바일 전용 오버레이 배경 (모바일 기본 탑재 및 숨김 상태 초기화) */
+.menu-overlay {
+    display: block; /* [모바일 우선 변경] */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* [수정] GNB를 우측 슬라이드 패널로 변경 및 내부 수직 배치를 위한 flex 적용 (모바일 기본 스타일) */
+.gnb {
+    position: fixed;
+    top: 0;
+    right: -100%; /* [추가] 처음에는 화면 우측 밖으로 숨김 */
+    width: 280px; /* [수정/모바일 우선 변경] 작은 모바일 화면에 맞춰 사이드바 너비 축소(280px)를 기본값으로 적용 */
+    max-width: 85%; /* [추가] 작은 디바이스에서 화면을 100% 덮지 않도록 제한 */
+    height: 100vh;
+    background: #222; /* [추가] 메가커피 스타일의 다크 배경 */
+    z-index: 1000;
+    transition: right 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    overflow-y: auto; /* [추가] 메뉴가 길 경우 내부 스크롤 허용 */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    display: flex; /* [추가] 닫기버튼 -> 로고 -> 메뉴 -> 하단유틸 수직 배치를 위한 flex */
+    flex-direction: column; /* [추가] */
+}
+.gnb.active {
+    right: 0; /* [추가] active 클래스 추가 시 화면 안으로 슬라이드 인 */
+}
+
+/* [수정] 1차 메뉴 세로형 아코디언 배치 및 여백 확장 (모바일 기본 스타일) */
+.depth1 {
+    display: flex;
+    flex: 1; /* [추가] 남은 공간을 모두 차지하여 하단 유틸을 화면 맨 아래로 밀어냄 */
+    flex-direction: column; /* [수정] 가로 배열을 세로 스택으로 변경 */
+    gap: 0; /* [수정] 메뉴 간격 제거 */
+    text-align: left; /* [수정] 좌측 정렬 */
+    margin: 0; /* [추가] ul 태그 기본 여백 제거 */
+    padding: 0; /* [추가] ul 태그 기본 패딩 제거 */
+    list-style: none; /* [추가] 목록 마커(불릿) 제거 */
+}
+.depth1 > li {
+    width: 100%; /* [수정] 100% 너비 차지 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* [추가] 메뉴 구분선 */
+    position: relative;
+}
+.depth1 > li > a {
+    position: relative;
+    padding: 18px 20px; /* [수정] 터치하기 편한 패딩 적용 */
+    font-size: 1.1rem; /* [추가] 가독성 좋은 폰트 크기 */
+    font-weight: bold;
+    display: flex; /* [추가] 메뉴 텍스트와 우측 화살표 아이콘 정렬 */
+    justify-content: space-between; /* [추가] */
+    align-items: center; /* [추가] */
+    color: #fff;
+}
+#header .depth1 > li > a:hover {
+    color: #ccc;
+}
+.depth1 > li > a::after {
+    display: none; /* [추가/모바일 우선 변경] PC용 하단 호버 밑줄 애니메이션 모바일에서 제거 */
+}
+
+/* [추가] 1차 메뉴 우측 끝 화살표(>) 폰트어썸 아이콘 스타일 (모바일 기본 표시) */
+.arrow-icon {
+    display: inline-block; /* [모바일 우선 변경] */
+    font-size: 0.85rem;
+    color: #666;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+/* [추가] 아코디언 메뉴가 열렸을 때 화살표 90도 아래로 회전 및 밝게 하이라이트 */
+.depth1 > li.open > a .arrow-icon {
+    transform: rotate(90deg);
+    color: #fff;
+}
+
+/* [수정] 2차 메뉴 모바일 아코디언 서브메뉴 구조로 변경 (모바일 기본 스타일) */
+.depth2 {
+    position: static; /* [수정] absolute 해제하여 메뉴 바로 아래로 자연스럽게 배치 */
+    width: 100%;
+    height: auto; 
+    max-height: 0; /* [추가] 아코디언 애니메이션을 위해 초기 높이 0 */
+    overflow: hidden;
+    line-height: 2.2;
+    padding: 0; /* [수정] 기본 패딩 제거 */
+    transition: max-height 0.3s ease;
+    z-index: 10;
+    list-style: none; /* [추가] 2차 메뉴 불릿 제거 */
+    background: rgba(0, 0, 0, 0.3); /* [추가] 1차 메뉴와 구분되는 어두운 배경 */
+}
+/* [추가] JS에서 li에 .open 클래스를 주거나 depth2에 .active를 줄 때 열림 처리 */
+.depth1 > li.open .depth2,
+.depth2.active {
+    max-height: 500px; /* [수정] 서브메뉴가 나타나도록 최대 높이 설정 */
+    padding: 10px 0; /* [추가] 열렸을 때 상하 여백 */
+}
+#header .depth2 li a {
+    color: #aaa; /* [수정] 다크 테마에 어울리는 회색 글자 */
+    padding: 8px 30px; /* [추가] 들여쓰기 패딩 */
+    display: block;
+    font-size: 0.95rem;
+}
+#header .depth2 li a:hover {
+    color: #fff; /* [추가] 호버 시 하얀색으로 강조 */
+}
+
+/* [추가] 오프캔버스 가장 하단에 배치되는 모바일 전용 로그인, 회원가입, SNS 영역 (모바일 기본 표시) */
+.mobile-util {
+    display: flex; /* [모바일 우선 변경] */
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 20px;
+    background: #1a1a1a; /* [추가] 상단 메뉴 영역과 구분되는 조금 더 어두운 바탕 */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto; /* [추가] flex 컨테이너에서 무조건 가장 아래쪽에 고정되도록 설정 */
+    flex-shrink: 0;
+}
+.mobile-login {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.mobile-login a {
+    color: #ddd;
+    font-size: 0.95rem;
+}
+.mobile-login a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+.mobile-sns {
+    text-align: center;
+}
+.mobile-sns .sns-link {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* [추가/모바일 우선 변경] PC용 슬라이드 전체 배경 숨김 (모바일 기본값) */
+.sub-bg {
+    display: none !important; 
+}
+
+.util {
+    display: flex;
+    align-items: center; /* [추가] SNS 아이콘과 로그인 링크 수직 중앙 정렬 */
+    gap: 10px; /* [수정/모바일 우선 변경] xs 구간 유틸리티 간격 축소(10px)를 기본값으로 설정 */
+}
+
+/* [추가/모바일 우선 변경] 모바일 화면 상단에서는 기존 SNS, 로그인 영역을 숨김 */
+.util .sns,
+.util .login {
+    display: none;
+}
+
+.sns {
+    vertical-align: middle;
+}
+.sns-link {
+    position: relative;
+}
+.sns-link span {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+.sns-link::before {
+    content: '\f167';
+    font-family: 'Font Awesome 6 Brands';
+    font-size: 28px;
+    color: #f00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.sns:hover .sns-link::before {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.sns:hover span {
+    opacity: 0;
+}
+.sns::after {
+    display: inline-block;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-white);
+    margin-left: 5px; /* [수정/모바일 우선 변경] xs 구간 SNS 구분점 여백 축소(5px)를 기본값으로 적용 */
+    vertical-align: middle;
+}
+
+.login {
+    display: flex;
+    gap: 8px; /* [수정/모바일 우선 변경] xs 구간 간격(8px) 기본 적용 */
+    font-size: 0.75rem; /* [수정] 로그인 글자 크기 축소하여 햄버거 버튼 공간 확보 (모바일 기본 적용) */
+}
+
+/* [추가] 햄버거 메뉴 버튼 표시 (모바일 기본 표시) */
+.btn-hamburger {
+    display: block; /* [모바일 우선 변경] */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100;
+}
+.btn-hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--color-white);
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   [추가/수정] Bootstrap 5 반응형 미디어 쿼리 (모바일 우선 점진적 향상 적용)
+========================================================= */
+
+/* [sm] 576px 이상 : 스마트폰 가로 화면 및 일반 모바일 화면 최적화 */
+@media (min-width: 576px) {
+    .util {
+        gap: 15px; /* [모바일 우선 변경] 스마트폰 가로 화면 이상부터 유틸 간격 15px로 복원 */
+    }
+    .login {
+        gap: 15px; /* [모바일 우선 변경] 간격 15px로 복원 */
+        font-size: var(--fz-sm); /* [모바일 우선 변경] 폰트 크기 기본 소형 사이즈로 복원 */
+    }
+    .sns::after {
+        margin-left: 8px; /* [모바일 우선 변경] SNS 구분점 여백 8px로 복원 */
+    }
+}
+
+/* [md] 768px 이상 : 태블릿 화면 최적화 */
+@media (min-width: 768px) {
+    #header {
+        padding: 0 20px; /* [모바일 우선 변경] 태블릿 이상부터 좌우 패딩 20px로 확대 */
+    }
+    .logo {
+        font-size: 1.375rem; /* [모바일 우선 변경] 로고 크기 1.375rem으로 복원 */
+    }
+    .gnb {
+        width: 300px; /* [모바일 우선 변경] 태블릿 이상부터 사이드바 너비 300px로 확대 */
+    }
+}
+
+/* [lg] 992px 이상 : PC 데스크톱 화면 전환 (오프캔버스 해제 -> 가로형 내비게이션 바 변환) */
+@media (min-width: 992px) {
+    .container {
+        height: 95px; /* [모바일 우선 변경] PC 데스크톱 헤더 높이 95px로 복원 */
+    }
+    .logo {
+        width: 207px; /* [모바일 우선 변경] 고정 로고 너비 207px 적용 */
+    }
+    
+    /* [모바일 우선 변경] 모바일 전용 요소들 PC 화면에서 완벽 숨김 처리 */
+    .gnb-header,
+    .gnb-logo-area,
+    .arrow-icon,
+    .mobile-util,
+    .menu-overlay,
+    .btn-hamburger {
+        display: none !important;
+    }
+    
+    /* [모바일 우선 변경] PC용 슬라이드 전체 배경 및 상단 유틸(SNS, 로그인) 표시 */
+    .sub-bg {
+        display: block !important;
+        z-index: 1; /* [수정] -1에서 1로 변경 (배경이 헤더 뒤로 숨는 문제 방지) */
+        position: absolute;
+        top: 95px; /* [수정] 80px에서 95px로 변경 (헤더 container 높이에 정확히 맞춤) */
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #ddd;
+        transition: 0.3s;
+        overflow: hidden;
+    }
+    .sub-bg.active {
+        height: 220px;
+    }
+    
+    .util .sns,
+    .util .login {
+        display: flex; /* [모바일 우선 변경] PC 화면에서 SNS와 로그인 링크 다시 노출 */
+    }
+    .util .sns {
+        display: block;
+    }
+
+    /* [모바일 우선 변경] 오프캔버스(Sidenav) 속성 해제 후 일반 PC 헤더 메뉴로 초기화 */
+    .gnb {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        background: transparent;
+        z-index: auto;
+        overflow: visible;
+        box-shadow: none;
+        display: block;
+    }
+    
+    /* [모바일 우선 변경] 1차 메뉴 PC 가로형 아코디언 형태로 초기화 */
+    .depth1 {
+        flex: none;
+        flex-direction: row; /* 가로 배치 */
+        gap: 30px; /* [추가] 992px~1199px 사이 간격 축소 상태(30px) 적용 */
+        text-align: center;
+    }
+    .depth1 > li {
+        width: 140px; /* [추가] 992px~1199px 사이 너비 축소 상태(140px) 적용 */
+        border-bottom: none; /* 모바일 구분선 제거 */
+    }
+    .depth1 > li > a {
+        font-size: var(--fz-lg);
+        padding: 10px 0;
+        display: block; /* [추가] 클릭 영역 확장을 위해 block 처리 */
+        color: var(--color-white);
+    }
+    
+    /* [모바일 우선 변경] PC 전용 하단 밑줄 애니메이션 다시 활성화 */
+    .depth1 > li > a::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        border-bottom: 2px solid #c78f66;
+        transform: scaleX(0);
+        transition: 0.3s;
+    }
+    .depth1 > li > a:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* [모바일 우선 변경] 2차 메뉴 PC 드롭다운 형태로 초기화 */
+    .depth2 {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        max-height: none;
+        overflow: hidden;
+        line-height: 2.2;
+        padding: 50px 0 0 0; /* PC 드롭다운 상단 여백 */
+        transition: 0.3s;
+        z-index: 10;
+        background: transparent; /* 모바일 배경색 제거 */
+    }
+    .depth2.active {
+        height: 200px;
+        max-height: none;
+    }
+    #header .depth2 li a {
+        color: #333; /* PC 드롭다운 텍스트 색상 복원 */
+        padding: 0;
+        display: inline;
+        font-size: inherit;
+    }
+    #header .depth2 li a:hover {
+        color: #333;
+    }
+}
+
+/* [xl] 1200px 이상 : 대형 PC 데스크톱 여백 및 간격 정사이즈 확대 */
+@media (min-width: 1200px) {
+    #header {
+        padding: 0 50px; /* [모바일 우선 변경] 오리지널 PC 헤더 좌우 여백(50px) 적용 */
+    }
+    .depth1 {
+        gap: 75px; /* [모바일 우선 변경] 오리지널 1차 메뉴 간격(75px) 적용 */
+    }
+    .depth1 > li {
+        width: 160px; /* [모바일 우선 변경] 오리지널 1차 메뉴 너비(160px) 적용 */
+    }
+}
