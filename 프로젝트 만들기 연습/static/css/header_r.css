@@ -157,7 +157,21 @@
 /* [추가] 아코디언 메뉴가 열렸을 때 화살표 90도 아래로 회전 및 밝게 하이라이트 */
 .depth1 > li.open > a .arrow-icon {
     transform: rotate(90deg);
-    color: #fff;
+    color: var(--color-white);
+    /* transform: translate()
+               translateX()
+               translateY()
+               translateZ()     
+    transform: rotate()
+               rotateX('angle') 
+               rotateY('angle')               
+    transform: scaleX()
+               scaleY()
+               scaleZ() 
+    transform: skew() 
+               skewX()  
+               skewY()  */
+
 }
 
 /* [수정] 2차 메뉴 모바일 아코디언 서브메뉴 구조로 변경 (모바일 기본 스타일) */
