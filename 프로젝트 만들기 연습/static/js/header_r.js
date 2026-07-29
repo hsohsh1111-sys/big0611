@@ -92,3 +92,23 @@ window.addEventListener("resize", function () {
     if (subBg) subBg.classList.remove("active");
   }
 });
+
+
+// 일반 함수 
+//   function 함수명(){
+//     실행문장
+//   }
+
+// 이벤트 작성 형식 
+//   객체.addEventListener('이벤트', {
+//     함수 
+
+
+//   })
+
+
+
+//   function closeMobileMene(){
+//     gnb.classList.remove('active')
+//     menuOverlay.classList.remove('active')
+//   }
