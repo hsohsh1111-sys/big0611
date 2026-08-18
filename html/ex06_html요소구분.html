@@ -3,102 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Metadata -->
+    <base href="">
+    <link rel="stylesheet" href="외부스타일.css">
+    <noscript>
+        <p>자바스크립트가 꺼져 있을 때 안내</p>
+        <p>이 사이트를 이용하려면 Javascript를 활성화해주세요.</p>
+    </noscript>
+    <script>//내부 자바스크립트 작성</script>
+    <style>/* 내부 CSS 작성 */</style>
+    <template></template>
     <title>HTML 요소 구분</title>
 </head>
 <body>
     <h1>콘텐츠 카테고리</h1>
 
-    
+    <!-- 1. Flow
+        Metadata
+            - link, meta, noscript, script, template
+        Heading
+            - h1~h6, hgroup
+        Embedded
+            - audio, canvas, embed, iframe, img, math, object, picture, svg, video
+        Interactive
+            - a, button, details, input, keygen, label, select, textarea
+        Phrasing
+            - area, abbr, b, bdi, bdo, br, cite, code, data, datalist, del, dfn, em, i, ins, kbd, map, mark, meter, output, progress, q, ruby, s, samp, slot, small, span, strong, sub, sup, time, u, var, wbr
+        Sectioning
+            - article, nav, section
+
+        address, blockquote, dialog, div, dl, fieldset, figure, footer, form, header, hr, main, menu, ol, p, pre, search, table, ul
+    -->
     <h2>Flow</h2>
-
-
-
+    <div></div>
+    <p></p>
+    <pre></pre>
+    <ul></ul>
+    <ol></ol>
+    <dl></dl>
+    
+    <table>
+        <tr>
+            <th></th>
+            <td></td>              
+            
+        </tr>
+    </table>
+    
+    <!-- 시멘틱 -->
+    main
+    header
+    footer
+    address
+    
+    <!-- 폼 -->
+    <form action=""></form>
+    <fieldset></fieldset>
+    
+    figure 
+    hr
+    menu
+    blockquote
+    dialog
+    search
+    <!-- 2. Metadata: 7개
+        base, meta, noscript, script, style, template, title
+     -->
     <h2>Metadata</h2>
-    <base href-"">
-    <link rel="stylesheet" href="외부스타일.css">
-    <meta>
-    <noscript>
-        <p>자바스크립트가 꺼져 있을 때 안내</p>
-        <p>이 사이트를 이용하려면 활성화해 주세요</p>
-    </noscript>
-    <script></script>
-    <template></template>
-    <title>Html 요수 구분 </title>
-
-
+    <p>메타데이터 관련 요소는 head 사이에 쓴다.</p>
+    
+    <!-- 3. Heading: 7개
+        h1~h6, hgroup
+     -->
     <h2>Heading</h2>
-    <hgroup>
-    <h1>큰제목</h1>
-    <h2>중간제목</h2>
-    <h3>작은제목</h3>
+    <h1>큰 제목: 상단 로고, 본문 전체 제목</h1>
+    <h2>중간 제목: 섹션 제목</h2>
+    <h3>작은 제목</h3>
     <h4>더 작은 제목</h4>
     <h5>더더 작은 제목</h5>
     <h6>더더더 작은 제목</h6>
+    <hgroup>
+        <h1>제목</h1>
+        <p>제목을 소개하는 간단한 문장입니다.</p>
     </hgroup>
 
-    <h2>Embeded</h2>
-    <img src="" alt="텍스트">
-    <video src=""></video>
+    <!-- 4. Embedded: 10개
+        audio, canvas, embed, iframe, img, math, object, picture, svg, video       
+    -->
+    <h2>Embedded</h2>
+    <img src="경로/파일명" alt="대체텍스트">
+    <video src="경로/파일명"></video>
     <video>
-        <source src="경로" type="video/mp4">
-        <source src="경로" type="video/webm">
-        <source src="경로" type="video/ogv">
-        <source src="경로" type="video/ogg">
-        브라우저가 video 태그를 지원하지 않습니다.         
+        <source src="경로/파일명" type="video/mp4">
+        <source src="경로/파일명" type="video/webm">
+        <source src="경로/파일명" type="video/ogg">
+        브라우저가 video 태그를 지원하지 않습니다.
     </video>
-    <audio src="" controls></audio>
-    <audio>
-        <source src="경로" type="audio/mpeg">
-        <source src="경로" type="audio/wav">
-        <source src="경로" type="audio/ogg">
-        브라우저가 audio 태그를 지원하지 않습니다.   
+    <audio src="경로/파일명" controls></audio>
+    <audio controls>
+        <source src="경로/파일명" type="audio/mpeg">
+        <source src="경로/파일명" type="audio/wav">
+        <source src="경로/파일명" type="audio/ogg">
+        브라우저가 audio 태그를 지원하지 않습니다.
     </audio>
     <iframe src=""></iframe>
-    <canvas></canvas>
-    <svg></svg>
     <picture>
-        <source media="(min-width: 768px)" srcset="테블릿.png">
+        <!-- 992px 보다 크면 데스크탑.png를 출력 -->
         <source media="(min-width: 992px)" srcset="데스크탑.png">
-        <img src="폰
-        .png" alt="프로필 이미지">
+        <!-- 768px 보다 크면 테이블릿.png를 출력 -->
+        <source media="(min-width: 768px)" srcset="테블릿.png">
+        <!-- 그렇지 않으면 폰.png를 출력 -->
+        <img src="폰.png" alt="프로필 이미지">
     </picture>
-    <object>
 
+    <canvas><!-- 자바스크립트를 이용해 2D 그래픽, 비트맵 이미지, 데이터 시각화 차트, 애니메이션, 2D/3D 게임 화면을 그릴 수 있습니다. --></canvas>
+    <svg><!-- 벡터 그래픽을 생성하고 배치하기 위한 컨테이너 입니다. --></svg>
+    <math><!-- 수학 공식을 기술하고 표현합니다. --></math>
+
+    <object data="" type=""><!-- PDF 문서, SVG 그래픽, 오디오/비디오, 다른 HTML 페이지 등 외부 멀티미디어 자원이나 외부 애플리케이션 데이터를 직접 불러와 삽입(Embed)하는 다목적 컨테이너 입니다. --></object>
+
+    <object data="포폴가이드.pdf" type="application/pdf">
+        <p>PDF 미리보기를 지원하지 않은 환경입니다.
+        <a href="파폴가이드.pdf">다운로드하기</a></p>
     </object>
 
+    <embed src="" type="">
 
+    <!-- 5. Interactive: 14개
+        Embedded:
+            - audio, embed, iframe, img, object, video
+
+        a, button, details, input, keygen, label, select, textarea
+     -->
     <h2>Interactive</h2>
     <a href="#">링크</a>
-    <input type="password" id="pwd">
-    <label for="pwd"></label>
+
+    <!-- 폼 -->
     <button type="submit">로그인</button>
-    <details></details>
-    <audio src=""></audio>
-    <video src=""></video>
-    <iframe src=""></iframe>
+    <input type="password" id="pwd">
+    <label for="pwd">비밀번호</label>
     <select name="" id=""></select>
     <textarea name="" id=""></textarea>
 
+    <!-- 정보를 접었다 폈다 할 수 있는 순수 UI 드롭다운(아코디언) 콘텐츠 태그 -->
+    <details>
+        <summary>자주 묻는 질문: 배송은 얼마나 걸리나요?</summary>
+        <p>주문 후 영업일 기준 2~3일 이내에 배송됩니다.</p>
+    </details>
+    <!-- HTML5 초기에 공개키 암호화 키 쌍(Key Pair)을 생성하기 위해 공식 태그로 도입되었으나, 보안 문제와 낮은 호환성 때문에 HTML5.2 명세에서 공식적으로 제거되었습니다. -->
+    <keygen>
 
+
+    <!-- 6. Phrasing: 35개 
+        metadata(5)
+            - link, meta, noscript, script, template
+        interactive(6)
+            - a, button, input, keygen, label, select
+        embeded(10)
+            - audio, canvas, embed, iframe, img, math, object, picture, svg, video
+        
+        
+        abbr, area, b, bdi, bdo, br, cite, code, data, datalist, del, dfn, em, i, ins, kbd, map, mark, meter, output, progress, q, ruby, s, samp, slot, small, span, strong, sub, sup, time, u, var, wbr        
+    -->
     <h2>Phrasing</h2>
-    <abbr title=""></abbr>
-    <b></b>
-    <i></i>
-    <bdi></bdi>
-    <bdo dir=""></bdo>
-    <area shape="" coords="" href="" alt="">
+    <span>인라인 스타일링, 텍스트 그룹화</span>
+    <br>: 줄바꿈
+
+    <!-- 이미지맵 -->
+    <map name="">
+        <area shape="" coords="" href="" alt="">
+    </map>
+
+    <!-- Image Map Generated by http://www.image-map.net/ -->
+    <img src="map.jpg" usemap="#image-map">
+
+    <map name="image-map">
+    <area target="_blank" alt="Domestic map" title="Domestic map" href="naver" coords="321,635,483,741" shape="rect">
+    </map>
+
+
+    <P><strong>주의:</strong>비밀번호 타인 공유 금지</P>
+    <em>emphasis(강조), 언어적 강조(어조): 문맥상 강하게 읽어야 하는 단어</em>
+    <b>bold(굵게), 의미없음, 단순시각화: 제품명, 문서 첫 단어, 단순 강조</b>
+    <i>italic(이텔릭), 의미없음, 특정한 어조/구분: 전문 용어, 외래어, 생각, 관용구</i>
+    <mark>형광펜, 관련성 표시: 검색 결과 하이라이트, 인용문 내 강조</mark>
+    <u>underline(밑줄)</u>
+    <s>Strikethrough(취소선)</s>
+    아래<sub>첨자</sub>
+    윗<sup>첨자</sup>
+
+    <q>웹 사이트 참조(인라인)</q>
+    <small>작은 글자: 부가 가치세</small>
+    <del>이전날짜</del>
+    <ins>변경날짜</ins>
+
+    <p>이문장에서 <U>철자 오탈자</U>가 포함되어 있습니다.</p>
+    <p>할인가: <s>50,000원</s>이 <strong>39,000원</strong>으로</p>
+    <p>오늘 할일 : <s>아침운동하기</s>(완료)</p>
+    <p>물의 화학식은 H<sub>2</sub>O입니다.</p>
+    <p>배열의 요소: A<sub>0</sub>, A<sub>1</sub>, A<sub>2</sub></p>
+    <p>피타고라스 정리: a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+    <p>행사일 : August 1 <sup>st</sup></p>
+    <p>이문장에 대한 부연 설명입니다. <sup>[1]</sup></p>
+
+    <p>스티븐 잡스는 <q cite="http://www.apple.com"> Stay hungry, stay foolish</q>라고 말했습니다.</p>
+    <p>월 이용료 :9,900원 <small>(부가세 포함)</small></p>
+    <footer>
+        <p>세미나 일정이
+            <del>8월1일</del>에서 
+            <ins>8월15일</ins>로 변경 되었습니다. 
+        </p>
+    </footer>
+
+    <!-- 약어 -->
+    <abbr title="World Wide Web Consortium">W3C</abbr>
     <cite></cite>
-    <code></code>
-    <deta value=""></deta>
-    <date></date>
-    <em></em>
+    <time datetime=""></time>
+    <data value=""></data>
+
+    <p>웹표준은 <title="World Wide Web Consortium">W3C</abbr>에서 관리합니다.</p>
+    <p><abbr title="HyperText Markup Language">HTML</abbr>은 웹 페이지를 만드는 업어입니다.</p>
+    <p>레오나르도 다 빈치의 <cite>모나리자</cite>는 루브르 박물관에 있습니다.</p>
+    <p>행사일 : <time datetime="2026-10-15">10월15일</time></p>
+    <p>수업시간 : <time datetime="2026-10-15T09:00">2026년 10월15일 오전 9시</time></p>
+    <p>작업 소요 시간 : <time datetime="P3D">3일</time></p>
+    <ul>
+        <li><data value="PRD-10023">스마트폰 케이스 </data></li>
+        <li><data value="PRD-10024">무선 충전기 </data></li>
+    </ul>
 
 
-    <a href=""></a>
+    <!-- wbr (Word Break Opportunity / 줄바꿈 기회 지점): 한 텍스트 줄이 길어서 브라우저 창 크기에 따라 자동으로 줄바꿈이 일어날 때, "만약 줄을 바꿔야 한다면 바로 이 지점에서 끊어서 줄을 바꿔라" 하고 위치를 지정해 줍니다. -->
+    <!-- 화면이 좁아지면 http:// -> example.com/ -> extremely/ -> long... 순서의 / 지점에서 줄바꿈됨 -->
+    <p>http://<wbr>example.com/<wbr>extremely/<wbr>long/<wbr>url/<wbr>link</p>
+
+    <!-- 아주 긴 영어 단어 줄바꿈 유도 -->
+    <p>Super<wbr>cali<wbr>fragi<wbr>listic<wbr>expiali<wbr>docious</p>
 
 
+    <!-- 폼(form) -->
+    <datalist></datalist>
+    <meter value=""></meter>
+    <progress></progress>
+    <output></output>
 
-    <h2>Sectioning</h2>
     
+    <!-- code: 컴퓨터 코드, 고정폭 글꼴(Monospace) -->
+
+    <p>화면에 메시지를 띄우려면 <code>console.log('안녕하세요');</code>를 사용하세요.</p>
+    <!-- dfn: 용어 정의(definition), 기울임꼴(Italic) -->
+    <p><dfn>HTML</dfn>은 웹 페이지의 뼈대를 구성하는 마크업 언어입니다.</p>
+    <!-- kdb: 키보드(keyboard) 입력 -->
+    <p>문서를 복사하려면 <kbd>Ctrl</kbd> + <kbd>C</kbd>를 누르세요.</p>
+    <!-- var: 변수(variable) -->
+    <p>삼각형의 넓이는 <var>w</var> × <var>h</var> / 2 입니다.</p>
+    <!-- samp: 프로그램 출력 샘플(sample output) -->
+    <p>잘못된 비밀번호를 입력하면 <samp>Error: Invalid Password</samp>라는 메시지가 뜹니다.</p>
+
+    <!-- Bi-Directional Isolation(양방향 격리): 아랍어, 히브리어처럼 오른쪽에서 왼쪽으로 쓰는 언어(RTL)와 한국어, 영어처럼 왼쪽에서 오른쪽으로 쓰는 언어(LTR)가 섞여 있을 때, 주위 텍스트의 방향성에 영향을 받거나 영향을 주지 않도록 해당 텍스트를 고립(격리)시킵니다. -->
+    <p>사용자 إبراهم: 2등</p>
+    <p>사용자 <bdi>إبراهم</bdi>: 2등</p>
+
+    <!-- Bi-Directional Override(양방향 덮어쓰기): 기본 텍스트가 출력되는 방향(왼쪽$\rightarrow$오른쪽 또는 오른쪽$\rightarrow$왼쪽)을 무시하고, 개발자가 지정한 방향으로 텍스트 순서를 강제로 뒤집거나 변경할 때 사용합니다. -->
+    <bdo dir="ltr">안녕하세요</bdo>
+    <bdo dir="rtl">안녕하세요</bdo>
+
+    <!-- ruby (주석/윗글자 표기): 동아시아 언어(한자, 일본어)에서 한자의 발음(주음, 윗글자)이나 뜻을 글자 위에 작게 달아줄 때 사용합니다. -->
+    <p>
+        <!-- 한국어 한자: 漢字 위에 한글 발음 표기 -->
+        <ruby>
+            漢 <rp>(</rp><rt>한</rt><rp>)</rp>
+            字 <rp>(</rp><rt>자</rt><rp>)</rp>
+        </ruby>
+    </p>
+
+    <slot>최신 웹 표준 기술인 Web Components(Shadow DOM)에서 재사용 가능한 커스텀 컴포넌트를 만들 때, 외부에서 넘겨주는 텍스트나 HTML 요소를 끼워 넣는 "빈 구멍(Placeholder)" 역할을 합니다.</slot>
+
+
+    <!-- 7. Sectioning 4개:
+        article, aside, nav, section 
+    -->
+    <h2>Sectioning</h2>
+    <article>
+        <h2>HTML5 시멘틱 태그 완벽 가이드</h2>
+        <p>작성일: <time datetime="2026-08-01">2026년8월1일</time></p>
+        <p>시멘틱 태그는 웹 접근성을 높여줍니다.</p>
+    </article>
+
+    <aside>
+        <h3>작성자 프로필</h3>
+        <p>백앤드 개발자입니다.</p>
+        <h3>관련글</h3>
+        <ul>
+            <li><a hrer="#">웹 플랫폼 최적화법</a></li>
+        </ul>
+    </aside>
+
+    <section>
+        <h2>서비스 소개 </h2>
+        <p>저희 회사는 최신 웹 개발 솔루션을 제공합니다. </p>
+    </section>
+
+    <section>
+        <h2>오시는 길</h2>
+        <p>서울시 강남구 ...</p>
+    </section>
+
+    <nav>
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">소개</a></li>
+            <li><a href="#">서비스</a></li>
+            <li><a href="#">문의하기</a></li>   
+            
+        </ul>
+    </nav>
+
 </body>
 </html>
