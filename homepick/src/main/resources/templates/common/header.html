@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="header">
+    <div class="site-header">
+        <div class="logo">
+            <a th:href="@{/}">Homepick</a>
+        </div>
+        <nav>
+            <ul class="gnb">
+                <li><a th:href="@{/}">홈</a></li>
+                <li><a th:href="@{/qna/list}">Q&A</a></li>
+                <li><a th:href="@{/login}">로그인</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 - Homepick</title>
+    <!-- 공통 CSS 및 회원가입 전용 CSS -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/join.css}">
+</head>
+<body>
+
+    <!-- 헤더 조각 연결 -->
+    <div th:replace="~{common/header :: header}"></div>
+
+    <!-- 회원가입 폼 컨테이너 -->
+    <div class="join-container">
+        <h2>회원가입</h2>
+
+        <form id="joinForm" th:action="@{/join}" method="post">
+            <div class="form-group">
+                <label for="username">아이디</label>
+                <input type="text" id="username" name="username" placeholder="아이디 입력" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호 입력">
+            </div>
+
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="이름 입력">
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="example@homepick.com">
+            </div>
+
+            <button type="submit" class="btn-submit">가입하기</button>
+        </form>
+
+        <div class="login-link">
+            이미 계정이 있으신가요? <a th:href="@{/login}">로그인</a>
+        </div>
+    </div>
+
+    <!-- 푸터 조각 연결 -->
+    <div th:replace="~{common/footer :: footer}"></div>
+
+    <!-- 회원가입 유효성 검사 JS -->
+    <script th:src="@{/js/join.js}"></script>
+</body>
+</html>

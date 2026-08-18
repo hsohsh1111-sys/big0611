@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 - Homepick</title>
+    <!-- 공통 CSS 및 로그인 전용 CSS -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+
+    <!-- 공통 헤더 연결 -->
+    <div th:replace="~{common/header :: header}"></div>
+
+    <!-- 로그인 폼 컨테이너 -->
+    <div class="login-container">
+        <h2>서비스 로그인</h2>
+
+        <form id="loginForm" th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">아이디</label>
+                <input type="text" id="username" name="username" placeholder="아이디 입력" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호 입력">
+            </div>
+
+            <button type="submit" class="btn-login">로그인</button>
+        </form>
+
+        <div class="join-link">
+            계정이 없으신가요? <a th:href="@{/join}">회원가입</a>
+        </div>
+    </div>
+
+    <!-- 공통 푸터 연결 -->
+    <div th:replace="~{common/footer :: footer}"></div>
+
+    <!-- 로그인 처리/실패 경고창 JS -->
+    <script th:src="@{/js/login.js}"></script>
+</body>
+</html>
