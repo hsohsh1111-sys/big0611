@@ -8,8 +8,12 @@ nbformat
 streamlit
 requests
 beautifulsoup4
+lxml
 selenium
+python-dotenv
+pymysql
 scikit-learn
 tensorflow
 jupytext
 streamlit-autorefresh
+openpyxl
