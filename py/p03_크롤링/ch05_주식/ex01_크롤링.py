@@ -79,7 +79,8 @@ print(fgn_own_ratio)
 
 # 6. 상대 수익률
 rel_return1 = soup.find_all('span', {'class':'tcr'})
-rel_return = rel_return1[4].text
+rel_return2 = rel_return1[2].text.replace('+','')
+rel_return = float(rel_return2)
 print(rel_return)
 # +283.38
 
