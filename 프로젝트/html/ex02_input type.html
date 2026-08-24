@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button>
+    <form action="/action_page.php">
+    <input type="text"> 아이디 <br>
+    <input type="password"> 패스워드 <br>
+    <input type="hidden"> 개발자용 <br>
+    <input type="button">버튼</button><br>
+
+    <input type="checkbox" name="chkgroup"> (필수) 선택 항목 체크 여부 <br>
+    <input type="checkbox" name="chkgroup"> (선택) 선택 항목 체크 여부 <br>
+    <input type="checkbox" name="chkgroup"> 항목체크 선택 항목 체크 여부 <br>
+    <input type="radio" name="rdigroup" checked> 동의 <br>
+    <input type="radio" name="rdigroup"> 동의 안함 <br>
+    <input type="file" value="파일첨부"> 업로드 새 파일찾기 <br>
+    <input type="image" src="이미지"><br>
+    <input type="submit" value="가입하기"> DB로 전송<br>
+    <input type="reset" value="취소"> <br>
+    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" >이메일<br>
+    <input type="search">검색<br>
+    <input type="url">URL<br>
+    <input type="tel" pattern="01[016789]-[0-9]{3,4}-[0-9]{4}"> 전화번호<br>    
+    <input type="date">연 월 일<br>
+    <input type="datetime-local">연 월 일 오전 시간<br>
+    <input type="month">연도 월<br>
+    <input type="time">오후 시:분<br>
+    <input type="week">연도, 번째 주<br>
+    <input type="color"><br>
+    <input type="number">스핀버튼<br>
+    <input type="range">비율<br>
+    </form>
+<p>Choose your favorite Web language:</p>
+
+<form>
+  <input type="radio" id="html" name="fav_language1" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language2" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language3" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+</form>
+<form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
+
+  <form>
+  <label for="datemax">Enter a date before 1980-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02">
+</form>
+
+<form>
+  <label for="quantity">Quantity (between 1 and 15):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="15" step="2">
+</form>
+
+</body>
+</html>
+
