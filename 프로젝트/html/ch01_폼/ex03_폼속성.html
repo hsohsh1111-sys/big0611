@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>폼속성 get</h2>        
+
+            <form action="/action_page.php" target="_blank" method="get" autocomplete="on">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+            </form>       
+
+    <h2>폼속성 post</h2>        
+
+            <form action="/action_page.php" target="_blank" method="post">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+            </form>
+
+            <!-- GET에 대한 참고 사항:
+
+            1.폼 데이터를 이름/값 쌍으로 URL에 추가합니다.
+            2. 절대로 GET 요청을 사용하여 민감한 데이터를 전송하지 마세요! (제출된 폼 데이터가 URL에 노출됩니다!)
+            3. URL의 길이는 제한되어 있습니다(2048자).
+            4. 사용자가 양식 제출 결과를 북마크하려는 경우에 유용합니다.
+            5. GET 방식은 구글 검색창의 쿼리 문자열처럼 보안이 취약하지 않은 데이터에 적합합니다.
+            
+            POST에 대한 참고 사항:
+
+            1. 폼 데이터를 HTTP 요청 본문에 추가합니다(제출된 폼 데이터는 URL에 표시되지 않습니다).
+            2. POST 방식에는 크기 제한이 없으므로 대량의 데이터를 전송하는 데 사용할 수 있습니다.
+            3. POST를 이용한 양식 제출은 북마크할 수 없습니다.         -->
+       
+</body>
+</html>
