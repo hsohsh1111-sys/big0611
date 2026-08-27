@@ -8,6 +8,8 @@ add(에드) & commit(커밋): 커밋 메시지
 구글 API key  보관 
 AQ.Ab8RN6Jzli_lwh8A3VARUt2SSvFujD1fbEcBSPMM93pxC6mF8g
 
+KRX 인증키 
+BDA4A58245CC4EB0823290F5C6316EA6827684F2
 
 
 
