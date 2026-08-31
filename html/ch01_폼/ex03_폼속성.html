@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼속성</title>
+</head>
+
+<body>
+    <h1>폼 속성: method</h1>
+
+    <!-- 
+        GET: "데이터를 가져와 줘!"
+            1. URL의 쿼리스트링으로 데이터 전달
+                http://127.0.0.1:5502/action_page.php?fname=John&lname=Doe
+            2. URL에 데이터 노출
+            3. URL 길이 제한으로 데이터 길이 제한(2000자 안팎).
+            4. 북마크 쉬움
+            5. 주 용도: 게시글 조회/검색
+        
+        POST: "이 데이터를 서버에 처리해 줘!"
+            1. HTTP 요청 본문으로 데이터 전달
+            2. URL에 데이터 노출x
+            3. 데이터 길이가 상대적으로 큼
+            4. 북마크 어려움
+            5. 주 용도: 로그인, 회원가입, 게시글 작성/수정
+
+    -->
+
+    <form action="/action_page.php" target="_blank" method="get" autocomplete="off">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="/action_page.php" target="_blank" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

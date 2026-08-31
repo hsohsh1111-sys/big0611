@@ -1,0 +1,180 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background:#F8FAFC;
+    color:#1E3A5F;
+}
+
+/* Header */
+header{
+    width:100%;
+    height:70px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.055);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo img{
+    height:60px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1E3A5F;
+    font-size:16px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#4A90E2;
+}
+
+/* Hero Section */
+.hero{
+    height:700px;
+    background:none,
+        /* linear-gradient(
+            rgba(218, 222, 226, 0.6),
+            rgba(235, 237, 240, 0.6)
+        ), */
+        url('images/building1.png');
+
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.hero-content{
+    color:blue;
+}
+
+.hero-content h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+.hero-content button{
+    background:#4A90E2;
+    border:none;
+    color:white;
+    padding:15px 35px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+
+
+
+.hero-content button:hover{
+    background:#1E3A5F;
+}
+
+/* Container 2 */
+.info-section{
+    padding:80px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.team-box,
+.news-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.team-box h2,
+.news-box h2{
+    font-size:24px;
+    margin-bottom:20px;
+    color:#1E3A5F;
+}
+
+.team-box p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.news-card{
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid #ddd;
+}
+
+.news-card h3{
+    font-size:16px;
+    margin-bottom:10px;
+    color:#4A90E2;
+}
+
+.news-card p{
+    font-size:14px;
+}
+
+/* Footer */
+footer{
+    background:#1E3A5F;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer p{
+    font-size:14px;
+    margin:5px 0;
+}
+
+/* 반응형 */
+@media(max-width:768px){
+
+    header{
+        padding:20px;
+        flex-direction:column;
+        height:auto;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .info-section{
+        grid-template-columns:1fr;
+        padding:40px 20px;
+    }
+}

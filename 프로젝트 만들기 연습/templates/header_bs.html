@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePick</title>
+    <!-- [추가] 폰트어썸 아이콘 사용을 위해 CDN 링크 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../static/css/header_r.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">HOMEPICK<span>홈픽</span></a>
+            </h1>
+
+            <nav class="gnb">
+                <!-- [수정/추가] 모바일 사이드 메뉴 상단 영역: 닫기(X) 버튼을 우측에 배치하여 햄버거 버튼 위치와 일치시킴 -->
+                <div class="gnb-header">
+                    <!-- [추가] 빈 영역이나 타이틀을 두어 닫기 버튼을 자연스럽게 우측으로 밀어냄 -->
+                    <span class="mobile-menu-title"></span>
+                    <button type="button" class="btn-close" aria-label="메뉴 닫기">&times;</button>
+                </div>
+
+                <!-- [추가] 오프캔버스 메뉴 내부 상단에 위치할 모바일 전용 로고 -->
+                <div class="gnb-logo-area">
+                    <h2 class="logo-mobile">
+                        <a href="index.html">HOMEPICK<span>홈픽</span></a>
+                    </h2>
+                </div>
+
+                <ul class="depth1">
+                    <li>
+                        <!-- [수정/추가] 메뉴 텍스트 끝에 폰트어썸 화살표(>) 아이콘 추가 및 flex 배치를 위해 span 감싸기 -->
+                        <a href="templates/sub/product.html">
+                            <span>매물 목록</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li><a href="templates/sub/product.html">통합 검색 리스트</a></li>
+                            <li><a href="#">지도 중심 매물 조회</a></li>
+                            <li><a href="#">매물 상세 정보</a></li>
+                            <li><a href="#">중개사 찾기 및 상담</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates/sub/dashboard.html">
+                            <span>시장분석 · AI추천</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li><a href="templates/sub/dashboard.html">종합 시장 분석 대시보드</a></li>
+                            <li><a href="#">지역별 트렌드 분석</a></li>
+                            <li><a href="#">AI 맞춤 매물 추천</a></li>
+                            <li><a href="#">부동산 뉴스 & 칼럼</a></li>
+                            <li><a href="#">부동산 세금 · 계산기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates/sub/myhomepick.html">
+                            <span>마이 홈픽</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li><a href="templates/sub/myhomepick.html">마이페이지 홈</a></li>
+                            <li><a href="#">관심 매물 관리</a></li>
+                            <li><a href="#">직접 매물 등록 · 수정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates/sub/faq.html">
+                            <span>고객센터</span>
+                            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul class="depth2">
+                            <li><a href="templates/sub/faq.html">자주 묻는 질문 FAQ</a></li>
+                            <li><a href="#">1:1 문의 게시판</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- [추가] 모바일 오프캔버스 메뉴 가장 하단에 배치할 모바일 전용 유틸(SNS, 로그인, 회원가입) 영역 -->
+                <div class="mobile-util">
+                    <div class="mobile-login">
+                        <a href="templates/sub/login.html">로그인</a>
+                        <a href="templates/sub/member.html">회원가입</a>
+                    </div>
+                    <div class="mobile-sns">
+                        <a href="#" class="sns-link"><span>SNS</span></a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="util">
+                <div class="sns">
+                    <a href="#" class="sns-link"><span>SNS</span></a>
+                </div>
+                <div class="login">
+                    <a href="templates/sub/login.html">로그인</a>
+                    <a href="templates/sub/member.html">회원가입</a>
+                </div>
+                <!-- [추가] 모바일 햄버거 메뉴 열기 버튼 (PC에서는 숨김 처리) -->
+                <button type="button" class="btn-hamburger" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="sub-bg"></div>
+        <!-- [추가] 모바일 메뉴 오픈 시 남은 화면을 어둡게 덮어주는 오버레이 배경 -->
+        <div class="menu-overlay"></div>
+    </header>
+
+    <script src="../../static/js/header_r.js"></script>
+</body>
+
+</html>

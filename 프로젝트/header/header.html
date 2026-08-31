@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+<!-- CSS -->
+<link rel="stylesheet" href="./common.css">
+
+
+<link rel="stylesheet" href="./header.css">
+
+<script src="./header.js"></script>
+
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <!-- Scroll Progress -->
+    <div class="progress-wrap">
+        <div class="progress-bar-scroll"></div>
+    </div>
+
+    <!-- ================= Navbar ================= -->
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container container-xxl">
+
+            <!-- Logo -->
+
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>집찾Go</span>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar">
+
+                <i class="fa-solid fa-bars fs-3 text-white"></i>
+
+            </button>
+
+            <!-- Menu -->
+
+            <div
+                class="collapse navbar-collapse justify-content-center"
+                id="mainNavbar">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="#">
+                            시장동향
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#">
+                            부동산 뉴스
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#">
+                            매물정보
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="header-action d-none d-lg-flex">
+
+                <a href="#" class="btn-login">
+
+                    로그인
+
+                </a>
+
+                <a href="#" class="btn-signup">
+
+                    회원가입
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= Hero ================= -->
+
+    <section class="hero">
+
+        <div class="container container-xxl">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-9">
+
+                    <div class="hero-content text-center fade-up">
+
+                        <span class="hero-subtitle">
+
+                            대한민국 부동산 플랫폼
+
+                        </span>
+
+                        <h1 class="hero-title">
+
+                            집찾Go와 함께<br>
+
+                            내 집을 가장 쉽게 찾으세요
+
+                        </h1>
+
+                        <p class="hero-desc">
+
+                            전국 아파트 · 오피스텔 · 빌라 · 상가<br>
+
+                            실거래가, 시장동향, 부동산 뉴스를
+                            한 곳에서 확인하세요.
+
+                        </p>
+
+                        <!-- CTA -->
+
+                        <div class="hero-buttons">
+
+                            <a href="#" class="btn-jip">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                매물 찾기
+
+                            </a>
+
+                            <a href="#" class="btn-outline-jip">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                시장동향 보기
+
+                            </a>
+
+                        </div>
+
+                        <!-- Search -->
+
+                        <div class="hero-search mt-5">
+
+                            <div class="row g-3">
+
+                                <div class="col-lg-4">
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="지역 또는 아파트명">
+
+                                </div>
+
+                                <div class="col-lg-3">
+
+                                    <select class="form-select">
+
+                                        <option>매물 종류</option>
+
+                                        <option>아파트</option>
+
+                                        <option>오피스텔</option>
+
+                                        <option>빌라</option>
+
+                                        <option>상가</option>
+
+                                        <option>토지</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-lg-3">
+
+                                    <select class="form-select">
+
+                                        <option>거래 유형</option>
+
+                                        <option>매매</option>
+
+                                        <option>전세</option>
+
+                                        <option>월세</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="col-lg-2">
+
+                                    <button
+                                        class="btn-search">
+
+                                        검색
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Statistics -->
+
+                        <div class="hero-stats">
+
+                            <div class="stat-card">
+
+                                <h3>32,481</h3>
+
+                                <span>
+
+                                    등록 매물
+
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card">
+
+                                <h3>8,912</h3>
+
+                                <span>
+
+                                    실거래가
+
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card">
+
+                                <h3>2,540</h3>
+
+                                <span>
+
+                                    중개사무소
+
+                                </span>
+
+                            </div>
+
+                            <div class="stat-card">
+
+                                <h3>1.2M</h3>
+
+                                <span>
+
+                                    월 방문자
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Scroll -->
+
+        <div class="scroll-indicator">
+
+            <a href="#content">
+
+                <span>
+
+                    Scroll
+
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</header>
+
+<!-- ================= Floating Menu ================= -->
+
+<div class="floating-nav">
+
+    <a href="#" title="최근 본 매물">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+    </a>
+
+    <a href="#" title="고객센터">
+
+        <i class="fa-solid fa-headset"></i>
+
+    </a>
+
+    <a href="#" title="카카오 상담">
+
+        <i class="fa-solid fa-comments"></i>
+
+    </a>
+
+    <a
+        href="#"
+        id="btnTop"
+        title="TOP">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </a>
+
+</div>    
+    
+</body>
+</html>
+
+<!-- ==========================================================
+     집찾Go Header Component
+=========================================================== -->
+

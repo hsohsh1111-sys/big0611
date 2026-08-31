@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML의 주요 태그 명세</title>
+</head>
+<body>
+    <!-- 
+        1. 문단 및 제목 관련 태그 
+            - <p>태그 내부에 블록 형태의 요소(Flow Content 내 주요 구역 태그: <div>, <ul>, <ol>, <p>, <table>, <h1>~<h6> 등 모든 블록 요소)를 절대로 넣을 수 없습니다.
+            - 
+            - <h1>~<h6> 제목 태그 내부에는 텍스트 및 인라인/Phrasing 요소만 들어갈 수 있으며,구역 분할 태그(<div>,<section>등)를 넣을 수 없습니다.
+    -->
+    <!-- 잘못된 예 -->
+    <p><div>하나</div></p>
+    <p><ul>둘</ul></p>
+    <p><h1>셋</h1></p>
+    <h1><div>서비스 소개</div></h1>
+
+    <!-- 2. 목록(List) 관련 태그 
+            - <ul>과 <ol>의 직계 자식(Direct Child)으로는 오직 <li>태그만 허용됩니다.
+            - <ul>바로 아래에는 반드시 <li>가 와야 하며, <div>나 <a>등은 <li>내부에 넣어야 합니다.
+            - <dl>의 직계 자식으로는<dt>(용어), <dd>(설명), 그리고 이 둘을 그룹화하기 위한 <div>만 들어올 수 있습니다.
+     -->
+
+    <!-- 잘못된 예 -->
+    <ul>
+        <div>메뉴 1</div>
+    </ul>
+    <ul>
+        <p>메뉴 1</p>
+    </ul>
+
+    <!-- 올바른 예 -->
+    <ul>
+        <li>
+            <div>콘텐츠</div>
+        </li>
+    </ul>
+
+    <!-- 3. 표(Table) 관련 태그
+            - <table>의 직계 자식 순서와 허용 태그는 명확히 정해져 있습니다.
+            - <caption>,<colgroup>,<thead>,<tbody>,<tfoot>,<tr>만 가능합니다. (<div>나<span>을<table>바로 아래 쓸 수 없음)
+            - <tr>의 직계 자식: <tr>내부에는 오직 <th>와 <td>만올 수 있습니다.
+    -->
+
+    <!-- 올바른 예 -->
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <tr>
+            <th></th>
+            <td></td>
+        </tr>
+    </table>
+
+    <table>
+        <caption></caption>
+        <colgroup></colgroup>
+        <thead><tr></tr></thead>
+        <tbody><tr></tr></tbody>
+        <tfoot><tr></tr></tfoot>
+    </table>
+
+    <!-- 4. 폼(Form) 및 입력 관련 태그 
+            - <form>태그 안에 또 다른 <form>태그를 중첩(Nesting)할 수 없습니다.
+            - <label>내부에는 대화형 요소(a, button)를 중첩해서 또 넣을 수 없습니다.
+    -->
+    <!-- 잘못된 예 -->
+    <form action="A">
+        <form action="B"></form>
+    </form>
+    
+    <label>안에
+        <button>이나</button>
+        <a>를 넣는 행위 금지</a>
+    </label>
+
+    <!-- 5. 이미지
+            - <img>태그는 src속성 외에 alt속성을 반드시 작성해야 합니다. (장식용 이미지라도 alt="" 형태로 명시 필요)
+    -->
+    <!-- 올바른 예 -->
+    <img src="장식용이미지.jpg" alt="">
+
+    <!-- 6. 상호작용 및 링크 태그 
+            - <a>태그 내부에 Interactive Content(<a>, <button>, <input> 등)를 중첩할 수 없습니다.
+            - <button>태그 내부에 대화형 요소(<a>,<input>,<select>,<textarea>등)를 넣을 수 없습니다.
+    -->
+    <!-- 잘못된 예 -->
+    <a href="...">클릭 <button>버튼</button></a>
+    <a href="...">링크 1 <a href="...">링크 2</a></a>
+
+    <!-- 7. 문서 전체 구조 태그 
+            - <html>의 직계 자식은 오직 <head>하나와 <body>하나여야 합니다.
+            - <title>태그는 <head>내부에 반드시 단 1개만 존재해야 웹 표준 검사를 통과합니다.
+    -->
+</body>
+</html>

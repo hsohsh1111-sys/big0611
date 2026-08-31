@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼요소</title>
+</head>
+
+<body>
+
+    <h2>The input Element</h2>
+
+    <form action="/action_page.php">
+        <label for="uid">아이디</label><br>
+        <!-- 영문 대소문자 + 숫자 조합, 4~20자로 제한 -->
+        <input type="text" id="uid" name="uid" required pattern="[A-Za-z0-9]{4,20}" title="영문 대소문자 + 숫자 조합, 4~20자로 제한"><br><br>
+        <label for="upw">패스워드</label><br>
+
+        <!-- 
+            "영문이 최소 1개 있고, 숫자가 최소 1개 있고, 특정 특수문자가 최소 1개 있으며, 전체 문자는 허용된 문자로만 8~20자여야 한다."
+        -->
+        <input type="password" id="upw" name="upw" required pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}"><br><br>
+        <input type="submit" value="로그인">
+    </form>
+
+
+    <label for="이름"></label>
+    <input type="text" id="이름">한 줄 문장(단어)
+
+    <input type="submit" value="로그인">
+    <button>로그인</button>
+
+    <label><input></label>
+    <textarea>여러 줄 문장</textarea>
+
+    <!-- 목록상자: 목록 선택만 가능 -->
+    <select>
+        <optgroup>
+            <option>항목1</option>
+            <option>항목2</option>
+            <option>항목3</option>
+        </optgroup>
+        <optgroup>
+            <option>항목4</option>
+            <option>항목5</option>
+        </optgroup>
+    </select>
+
+    <!-- 콤보상자: 목록 선택 + 입력 -->
+    <input type="text" list="이름">
+    <datalist id="이름">
+        <optgroup>
+            <option>항목1</option>
+            <option>항목2</option>
+            <option>항목3</option>
+        </optgroup>
+        <optgroup>
+            <option>항목4</option>
+            <option>항목5</option>
+        </optgroup>
+    </datalist>
+
+    <fieldset>
+        <legend></legend>
+    </fieldset>
+
+    <output></output>
+</body>
+
+</html>

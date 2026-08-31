@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼(form)</title>
+</head>
+
+<body>
+    <h2>HTML Forms</h2>
+    <!-- 들여쓰기: shift+alt+f -->
+    <!-- 
+        <form>
+            <label>
+                - 사용자가 입력 요소에 초점을 맞추면 화면 낭독기가 레이블을 소리 내어 읽어주기 때문입니다. -> 웹접근성
+                - 라디오 버튼이나 체크박스처럼 매우 작은 영역을 클릭하기 어려운 사용자에게도 도움이 됩니다. 사용자가 <label>요소 안의 텍스트를 클릭하면 라디오 버튼/체크박스가 토글되기 때문입니다.
+            <input type="종류">
+    -->
+
+    <form action="name.jsp" method="get">
+        First name:<br>
+        <input type="text" id="fname" name="fname" placeholder="이름을 쓰세요." value="Hong"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="버튼이름">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+</body>
+
+</html>

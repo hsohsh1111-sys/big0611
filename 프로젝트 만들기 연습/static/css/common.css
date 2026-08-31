@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* font CDN */
+/* 구글: noto sans kr */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* 눈누: 나눔스퀘어, 저작권 표기 */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* 폰트어썸 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Style Guides */
+:root {
+    /* font */
+    --ff: 'NanumSquare',"Noto Sans KR", sans-serif;
+    --fz-xs: 0.75rem; 
+    --fz-sm: 0.875rem; 
+    --fz-md: 1rem; 
+    --fz-lg: 1.125rem; 
+    --fz-xl: 1.25rem; 
+
+    /* color */
+    --color-primary: #006AC9;
+    --color-secondary: #6C757D;
+    --color-accent: #FF600D;
+    --color-white: #F8F9FA;
+    --color-text: #333;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box; /* bx */
+}
+body,h1,h2,h3,p,ul {
+    margin: 0; /* m0 */
+}
+ul {
+    list-style: none; /* lisn */
+    padding: 0; /* p0 */
+}
+a {
+    text-decoration: none; /* tdn */
+    color: var(--color-text)
+}
+
+body {
+    /* font-family: var(--ff); */
+    /* line-height: 1.6; */ /* lh1.6 */
+    /* font-size: 1rem; */
+
+    /* font: 크기/줄간격 글꼴1, 글꼴2, ...; */
+    font: var(--fz-md)/1.6 var(--ff);
+
+    color: var(--color-text); /* c */
+    background: var(--color-white); /* bg */
+}

@@ -1,0 +1,646 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background:#F8FAFC;
+    color:#1E3A5F;
+}
+
+/* Header */
+header{
+    width:100%;
+    height:70px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    box-shadow:0 2px 10px rgba(0, 0, 0, 0.055);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo img{
+    height:60px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1E3A5F;
+    font-size:16px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#4A90E2;
+}
+
+/* Hero Section */
+.hero{
+    height:700px;
+    background:none,
+        /* linear-gradient(
+            rgba(218, 222, 226, 0.6),
+            rgba(235, 237, 240, 0.6)
+        ), */
+        url('images/building1.png');
+
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.hero-content{
+    color:blue;
+}
+
+.hero-content h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+.hero-content button{
+    background:#4A90E2;
+    border:none;
+    color:white;
+    padding:15px 35px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+
+
+
+.hero-content button:hover{
+    background:#1E3A5F;
+}
+
+:root{
+
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+    --light:#F8FAFC;
+    --text:#222;
+    --sub:#6B7280;
+    --border:#E5E7EB;
+}
+
+body{
+
+    font-family:'Pretendard','Noto Sans KR',sans-serif;
+    color:var(--text);
+
+}
+
+.container{
+
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+
+}
+
+
+/* ======================================================
+   공통 타이틀
+   ====================================================== */
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:var(--primary);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.section-title h2{
+
+    margin-top:15px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.section-title p{
+
+    margin-top:20px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+
+/* ======================================================
+   ABOUT
+   ====================================================== */
+
+.about-section{
+
+    padding:110px 0;
+
+    background:#F8FAFC;
+
+}
+
+.about-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about-card{
+
+    width:800px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:55px;
+
+    transition:.4s;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    border:1px solid var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Hover 라인 */
+
+.about-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:6px;
+
+    background:linear-gradient(to right,#2563EB,#60A5FA);
+
+    transition:.4s;
+
+}
+
+.about-card:hover::before{
+
+    width:100%;
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
+.icon-box{
+
+    width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    transition:.35s;
+
+}
+
+.icon-box i{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+}
+
+.about-card:hover .icon-box{
+
+    transform:scale(1.1) rotate(8deg);
+
+}
+
+.about-card h3{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    font-size:30px;
+
+}
+
+.about-card p{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#666;
+
+    line-height:1.9;
+
+}
+
+.about-card ul{
+
+    margin-top:35px;
+
+    list-style:none;
+
+}
+
+.about-card ul li{
+
+    padding:14px 0;
+
+    font-size:17px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.about-card ul li i{
+
+    color:#2563EB;
+
+    margin-right:10px;
+
+}
+
+.project-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.project-btn:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+.project-btn i{
+
+    transition:.35s;
+
+}
+
+.project-btn:hover i{
+
+    transform:translateX(6px);
+
+}
+
+
+
+/* ======================================================
+   SERVICES
+   ====================================================== */
+
+.service-section{
+
+    padding:120px 0;
+
+    background:white;
+
+}
+
+.service-wrap{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.service-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:0;
+
+    background:linear-gradient(180deg,#EFF6FF,transparent);
+
+    transition:.35s;
+
+}
+
+.service-card:hover::before{
+
+    height:100%;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.service-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#EFF6FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.35s;
+
+}
+
+.service-icon i{
+
+    font-size:42px;
+
+    color:#2563EB;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:scale(1.15);
+
+    background:#2563EB;
+
+}
+
+.service-card:hover .service-icon i{
+
+    color:white;
+
+}
+
+.service-card h3{
+
+    margin-top:30px;
+
+    font-size:26px;
+
+}
+
+.service-card p{
+
+    margin-top:18px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    min-height:70px;
+
+}
+
+.service-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:25px;
+
+    color:#2563EB;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.service-card a i{
+
+    transition:.35s;
+
+}
+
+.service-card:hover a{
+
+    color:#1D4ED8;
+
+}
+
+.service-card:hover a i{
+
+    transform:translateX(6px);
+
+}
+
+/* Footer */
+footer{
+    background:#1E3A5F;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer p{
+    font-size:14px;
+    margin:5px 0;
+}
+
+
+
+/* ======================================================
+   반응형
+   ====================================================== */
+
+@media(max-width:992px){
+
+.service-wrap{
+
+grid-template-columns:1fr;
+
+}
+
+.about-card{
+
+width:100%;
+
+}
+
+.section-title h2{
+
+font-size:34px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.about-section,
+.service-section{
+
+padding:70px 0;
+
+}
+
+.section-title{
+
+margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+font-size:28px;
+
+}
+
+.about-card{
+
+padding:35px 25px;
+
+}
+
+.service-card{
+
+padding:35px 25px;
+
+}
+
+.project-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
