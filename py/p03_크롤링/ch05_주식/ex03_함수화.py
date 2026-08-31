@@ -68,13 +68,13 @@ def stock_crawling(item):
 
     # 업종 PER
     # per_ind = float(ul[2].find_all("li")[1].text)
+
     raw_text = up_list.find_all('li')[5].text.strip()
 
     if raw_text and raw_text != '-':
         per_ind = float(up_list.find_all('li')[5].text)
-    else: 
-        per_ind = 0.0    
-
+    else:
+        per_ind = 0.0
 
     # PBR(Price to Book Ratio, 주가순자산비율)
     pbr = float(ul[3].find_all("li")[1].text)

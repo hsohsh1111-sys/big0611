@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+
 from ex06_데이터조회 import db_select
 
 # 데이터 분석

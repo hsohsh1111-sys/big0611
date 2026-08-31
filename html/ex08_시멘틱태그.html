@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱(의미있는)태그</title>
+</head>
+<body>
+    <!-- 시맨틱 태그 종류와 제약조건/권장사항 
+        1. main
+            - 메인 본문 영역
+            - 페이지당 오직 1개만 노출: 문서 전체에서 실제 화면에 보이는 <main>태그는 오직 하나여야 합니다. (단, hidden속성이 들어간 <main>이 따로 존재하는 경우는 예외)
+            - <main>태그는 다른 구역 태그(<header>,<nav>,<article>,<aside>,<footer>)의 자식으로 들어갈 수 없습니다.
+            - <body>의 직계 자식 또는 단순 레이아웃용 <div>바로 아래에 위치해야 합니다.
+
+        2. header, footer
+            - <body>바로 아래에 쓰이면 페이지 전체의 헤더/푸터역할을 합니다.
+            - <article>이나 <section>내부에도 각각의 독립된<header>와<footer>를 중첩하여 사용할 수 있습니다.
+            - <header>내부에 또 다른<header>나 <footer>를 넣을 수 없습니다.
+            - <footer>내부에 또 다른<footer>나 <header>를 넣을 수 없습니다.
+            - <address>태그 내부에 <header>나 <footer>를 넣을 수 없습니다.
+        3. section, article
+            - 하나 이상의 제목(h2~h6) 요소를 포함해야 한다.
+            - 둘 다 상호 간에 제한 없이자유롭게 상호 중첩이 가능하지만, 의미에 따른 중첩 기준이 있습니다.
+            - <article>내부에 <section>중첩 (가장 흔함): 하나의 독립된 블로그 포스트나 뉴스 기사(<article>) 내부를 여러 주제 단락(<section>)으로 나눌 때 사용합니다.
+            - <section>내부에 <article>중첩: 특정 주제 구역(<section>) 내에 독립된 여러 개의 콘텐츠 단위(<article>)가 나열될 때 사용합니다.
+
+        4. aside
+            - <body>직계로 쓰이면 페이지 전체의 사이드바(연관 링크, 프로필 등) 역할을 합니다.
+            - <article>이나 <section>내부에 들어가면 해당 글과 관련된 부가 정보(주석, 연관글 추천, 용어 사전 등) 역할을 합니다.
+    -->
+
+    <!-- 올바른 예 -->
+    <header>머리글</header>
+    <div>
+        <main>메인 본문 영역</main>
+    </div>
+    <section>
+        <header>섹션의 머리글</header>
+        <article>아티클</article>
+        <section>섹션</section>
+        <aside>해당 글과 관련된 부가 정보</aside>
+    </section>
+    <article>
+        <header>아티클의 머리글</header>
+        <section>세션1</section>
+        <section>세션2</section>
+        <aside>해당 글과 관련된 부가 정보</aside>
+    </article>
+    <footer>바닥글</footer>
+    <aside>본문 외 콘텐츠</aside>
+
+    <!-- 잘못된 예 -->
+    <main>
+        <main></main>
+    </main>
+    <header>
+        <header>헤더</header>
+        <footer>푸터</footer>
+    </header>
+    <footer>
+        <footer>푸터</footer>
+        <header>헤더</header>
+    </footer>
+    <address>
+        <footer>푸터</footer>
+        <header>헤더</header>
+    </address>
+    <aside>
+        <aside>사이드</aside>
+    </aside>
+
+
+    <!-- 종합 예시 -->
+    <!-- 페이지 전체 헤더 -->
+    <header>
+        <h1>로고 및 사이트 제목</h1>
+        <nav>메뉴</nav>
+    </header>
+
+    <!-- 메인 영역 (페이지에 1개) -->
+    <main>
+        <!-- 뉴스 섹션 구역 -->
+        <section>
+            <h2>최신 뉴스</h2>
+
+            <!-- 섹션 내부의 독립된 기사 카드 -->
+            <article>
+                <!-- 기사 개별 헤더 -->
+                <header>
+                    <h3>기사 제목</h3>
+                </header>
+                <p>기사 본문 내용...</p>
+                <!-- 기사 개별 푸터 -->
+                <footer>작성일: 2026-07-30</footer>
+            </article>
+        </section>
+    </main>
+
+    <!-- 페이지 전체 푸터 -->
+    <footer>
+        <p>Copyright © Company All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

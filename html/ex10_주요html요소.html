@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주요 HTML 요소의 Display 타입</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body * {
+            outline: 1px dotted red;
+
+            width: 100px;
+            /* 실제 width에 padding + border가 포함 */
+            /* box-sizing: border-box; */
+            /* 실제 width에 padding + border가 포함x (기본값) */
+            /* box-sizing: content-box; */
+
+            /* padding: 10px; */
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- display: block;
+        1. 자동 줄바꿈(배치: 위->아래)
+        2. 한 줄 전체 차지
+        3. width, height
+        4. 상하좌우 margin/padding 모두 적용
+        5. 중첩 시 위 아래 margin은 큰 값으로 지정된다.
+    -->
+
+    <!-- 제목 -->
+    <h1>제목1: 상단 로고, 1번만 사용</h1>
+    <h2>제목2: 섹션 제목</h2>
+    <h3>제목3: UI 카드 제목</h3>
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+
+    <!-- 단락(문단) -->
+    <p>단락입니다.</p>
+
+    <!-- 목록 -->
+    <!-- ul은 기본 패딩이 있다. -->
+    <ul>
+        <li>메뉴</li>
+    </ul>
+
+    <!-- 그룹화(영역 구분) -->
+    <div>그룹화</div>
+    <!-- 시맨틱 요소 -->
+    <nav>글로벌 내비게이션: 링크, 검색</nav>
+    <section>
+        <h2>그룹화</h2>
+        <p>반드시 하나 이상의 제목을 쓴다</p>
+    </section>
+    <footer>바닥글</footer>
+    <header>머리글</header>
+
+    <!-- 폼 -->
+    <form action="login.jsp">폼</form>
+
+
+
+    <!-- display: list-item; (참고: block 성격과 같다.) -->
+    <ul>
+        <li>목록</li>
+    </ul>
+
+
+    <!-- display: inline; 
+        1. 줄바꿈 없음(배치: 왼쪽->오른쪽)
+        2. 콘텐츠 크기만큼만 차지 
+        3. width, height, 상하 margin 적용 안 됨
+        4. 상하좌우 padding이 적용된다.
+        5. margin은 좌우만 적용된다.
+        6. 중첩 시 좌우 margin은 합한 값으로 적용된다.
+    -->
+
+    <!-- 텍스트 -->
+    <b>굵게, 스타일</b>
+    <i>이텔릭, 폰트어썸</i>
+    <!-- 링크 -->
+    <a href="#">링크</a>
+
+    <!-- 미디어: 이미지, 비디오 -->
+    <!-- 예외적으로 img 태그는 width, height가 적용된다. -->
+    <img src="../assets/logo.png" alt="홈픽 로고">
+    <video src="../assets/vid.mp4"></video>
+    <video>
+        <source src="../assets/vid.mp4" type="video/mp4">
+    </video>
+    <iframe width="1123" height="632" src="https://www.youtube.com/embed/piSXxhOxc-M" title="탑석 푸르지오 파크7  | 입지홍보영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- 그룹핑 -->
+    <span>인라인 그룹핑</span>
+
+    <!-- 폼 -->
+    <label for="userid">아이디: </label>
+
+
+    <!-- display: inline-block;
+        1. 대부분 폼 컨트롤 및 대체 요소
+        2. 줄바꿈 없이 나란히 배치(가로 배치: 왼->오) -> inline
+        3. width, height, 상하좌우 margin 모두 설정 가능 -> block
+    -->
+
+    <!-- 폼 -->
+    <input type="text" id="userid">
+    <button>버튼</button>
+    <select name="" id="">
+        <option value="">선택 목록</option>
+    </select>
+    <textarea name="" id="">
+        여러 줄 문장 입력 가능
+        게시판에 게시글 입력
+    </textarea>
+
+
+    <!-- display: none;
+            - 화면에 렌더링되지 않고 공간도 차지하지 않음
+            - 이벤트x, 트랜지션/애니메이션x
+                <head></head>
+                <meta>
+                <script></script>
+                <style></style>
+                <link>
+                <title></title>
+    -->
+
+    <script></script>
+
+    <!-- 테이블(표) 계열 -->
+    <!-- display: table; -->
+    <table>
+        <!-- display: table-row; -->
+        <tr>
+            <!-- display: table-cell; -->
+            <th>열 머리글</th>
+        </tr>
+        <tr>
+            <!-- display: table-cell; -->
+            <td>셀</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
