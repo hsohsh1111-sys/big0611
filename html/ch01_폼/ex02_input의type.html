@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input의 type</title>
+    <style>
+        body * {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="test.jsp">
+        <!-- HTML4.01 이전 -->
+        <!-- maxlength: 입력 필드에 입력할 수 있는 문자의 최대 개수 -->
+        <input type="text" size="30" maxlength="20" pattern="[a-zA-Z0-9]{4,20}" title="영문과 숫자를 사용하여 4~20자로 입력하세요." required>아이디<br>
+
+        <input type="text" value="편집 불가, DB전송" readonly>편집 불가<br>
+        <input type="text" value="편집 불가, DB전송x" disabled>편집 불가<br>
+        <input type="password" pattern="(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}" title="영문, 숫자, 특수문자를 포함하여 8~20자로 입력하세요." required>패스워드<br>
+
+        <input type="hidden">개발자용<br>
+        <!-- 다중 선택 -->
+        <input type="checkbox" name="chkgroup" checked>(필수) 개인정보 동의<br>
+        <input type="checkbox" name="chkgroup">(선택) 이벤트 보내줘 여부<br>
+        <input type="checkbox" name="chkgroup">(선택) 항목 체크, 항목 체크 여부<br>
+        <!-- 여러 개 중 1개 선택 -->
+        <input type="radio" name="radiogroup" checked>동의<br>
+        <input type="radio" name="radiogroup">동의 안함<br>
+        <!-- 버튼 -->
+        <input type="submit" value="가입하기">DB로 전송용!<br>
+        <input type="reset" value="취소"><br>
+        <input type="button" value="버튼">submit &nbsp; reset을 제외<br>
+        <!-- 버튼 태그의 기본 타입은 submit -->
+        <button type="submit">가입하기</button><br>
+        <button type="reset">취소</button><br>
+        <button type="button">버튼</button><br>
+        <input type="file">업로드 시 파일찾기<br>
+        <!-- submit 용! -->
+        <input type="image" src="naver.png"><br>
+        <!-- HTML5 이후 -->
+        <!-- 입력상자 -->
+        <!-- JS 유효성검사를 보완! -->
+        <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">이메일<br>
+        <input type="search">검색<br>
+        <input type="url">URL<br>
+        <input type="tel" pattern="01[016789]-?[0-9]{3,4}-?[0-9]{4}">전화번호<br>
+
+        <!-- 날짜/시간 -->
+        <input type="date">연도-월-일<br>
+        <input type="datetime-local">연도-월-일 오전 시:분<br>
+        <input type="time">오후 시:분<br>
+
+        <!-- ff: month와 week는 지원x -->
+        <input type="month">연도-월<br>
+        <input type="week">연도, 번째 주<br>
+
+        <!-- 색 -->
+        <input type="color"><br>
+        <input type="number">스핀 버튼<br>
+        <input type="range">비율
+    </form>
+
+
+    <p>Choose your favorite Web language:</p>
+
+    <form>
+        <!-- value는 DB로 전송되는 값 -->
+        <input type="radio" id="html" name="fav_language" value="HTML" checked>
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+    </form>
+
+    <form>
+        <input type="checkbox" id="vehicle1" name="vehicle" value="Bike" checked>
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+    </form>
+
+
+    <form>
+        <!-- max: 최대, min: 최소 -->
+        <label for="datemax">Enter a date before 1980-01-01:</label>
+        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+        <label for="datemin">Enter a date after 2000-01-01:</label>
+        <input type="date" id="datemin" name="datemin" min="2000-01-02">
+    </form>
+
+    <form>
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <!-- step: 증감 -->
+        <input type="number" id="quantity" name="quantity" min="1" max="15" step="2">
+    </form>
+
+</body>
+
+</html>
