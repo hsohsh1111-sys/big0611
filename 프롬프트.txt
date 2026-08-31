@@ -11,7 +11,10 @@ AQ.Ab8RN6Jzli_lwh8A3VARUt2SSvFujD1fbEcBSPMM93pxC6mF8g
 KRX 인증키 
 BDA4A58245CC4EB0823290F5C6316EA6827684F2
 
+open AI키
+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
 
+개인 홈페이즐 만들고 있는데 index.html파일을 수정하려고해 1. 만약에 동적인 거나 다른 파일을 만들어야 한다면 index.js, index.java, index.css 파일 등으로 새로 만들어줘 2. 첨부된 나의 포트폴리오를 바탕으로 내용을 구성해 주고 기존에 작성되었던 나의 ip 기술도 같이 어필할 수 있도록 자료를 수정해줘 3. 지금보다 더 세련되고 고급스럽게 디자인을 수정해줘 4. 모든 기본 정보는 첨부된 ppt 파일을 기반으로 수정해 줘
 
 
 support폴더에 Servise.html 파일내에 모바일 모델하우스 섹션이 있어 그 안에 자세히 보기 페이지를 작성하려고 해 1. modelhouse.html파일은 support 폴더내에 작성해주고, static 안에 css 폴더에는 modelhouse.css 파일을 생성해줘 
