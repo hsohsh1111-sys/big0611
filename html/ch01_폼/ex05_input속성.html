@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 속성</title>
+    <style>
+        input:not(input[type="submit"]) {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John" readonly><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe" disabled>
+        <input type="submit" value="버튼이름">
+    </form>
+
+
+    <form>
+        <label for="userid">First name:</label><br>
+        <input type="text" id="userid" name="userid" value="John" readonly size="50"><br>
+        <label for="userpw">Last name:</label><br>
+        <input type="password" id="userpw" name="userpw" value="Doe" disabled>
+        
+        <input type="search"  id="search" name="search" value="검색어" size="20"><br>
+        <input type="tel"  id="tel" name="tel" value="010-1234-5678" ><br>
+        <input type="url"  id="url" name="url" value="http://www.hsohsh1111.com" ><br>
+        <input type="email"  id="email" name="email" value="hsohsh1111@naver.com" ><br>
+    </form>
+
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" size="50"><br>
+        <label for="pin">PIN:</label><br>
+        <input type="text" id="pin" name="pin" maxlength="4" size="4">
+    </form>
+
+    <form>
+        <label for="datemax">Enter a date before 1980-01-01:</label>
+        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+
+        <label for="datemin">Enter a date after 2000-01-01:</label>
+        <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+        
+        <label for="range">range (between 1 and 5):</label>
+        <input type="range" id="range" name="range" min="1" max="5">
+        
+    </form>
+
+    <form>
+        <label for="files">Select files:</label>
+        <input type="file" id="files" name="files" multiple>
+    </form>
+
+    <form>
+        <label for="country_code">Country code:</label>
+        <input type="text" id="country_code" name="country_code"
+               pattern="[A-Za-z]{3}" title="Three letter country code">
+    </form>
+
+
+    <form>
+        <label for="phone">Enter a phone number:</label>
+        <input type="tel" id="phone" name="phone"
+        placeholder="010-1234-5678"
+        pattern="010-[0-9]{4}-[0-9]{4}">
+    </form>
+
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </form>
+
+    <form>
+        <label for="points">Points:</label>
+        <input type="number" id="points" name="points" step="3">
+    </form>
+</body>
+</html>
