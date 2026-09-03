@@ -6,7 +6,20 @@
     <title>input 속성</title>
     <style>
         input:not(input[type="submit"]) {
-            width: 300px;
+            width: 200px;
+        }
+        ::placeholder {
+            color:blue;
+            font-size: 10px;
+
+        }
+        input:not(input[type="value"]) {
+            color: red;
+        }
+
+        input {
+            color: red;
+            font-size: 10px;
         }
     </style>
 </head>
@@ -22,9 +35,9 @@
 
     <form>
         <label for="userid">First name:</label><br>
-        <input type="text" id="userid" name="userid" value="John" readonly size="50"><br>
+        <input type="text" id="userid" name="userid" size="50" required minlength="4" maxlength="20" placeholder="최소4자에서 최대 20자 이내로 작성하시요" ><br>
         <label for="userpw">Last name:</label><br>
-        <input type="password" id="userpw" name="userpw" value="Doe" disabled>
+        <input type="password" id="userpw" name="userpw" value="Doe" disabled size="4" >
         
         <input type="search"  id="search" name="search" value="검색어" size="20"><br>
         <input type="tel"  id="tel" name="tel" value="010-1234-5678" ><br>
@@ -82,6 +95,14 @@
     <form>
         <label for="points">Points:</label>
         <input type="number" id="points" name="points" step="3">
+    </form>
+
+    <form>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
     </form>
 </body>
 </html>

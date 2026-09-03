@@ -5,6 +5,9 @@
 add(에드) & commit(커밋): 커밋 메시지
  -> push(푸시)
 
+파이썬 책 사이트
+ https://wikidocs.net/28#_10
+
 구글 API key  보관 
 AQ.Ab8RN6Jzli_lwh8A3VARUt2SSvFujD1fbEcBSPMM93pxC6mF8g
 
