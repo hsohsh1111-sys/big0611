@@ -1,0 +1,65 @@
+homepick/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── render/
+│   │   │           └── homepick/
+│   │   │               │
+│   │   │               ├── config/                        # [1] 설정 영역
+│   │   │               │   └── SecurityConfig.java        # Spring Security 보안 및 권한 설정
+│   │   │               │
+│   │   │               ├── controller/                    # [2] 컨트롤러 영역 (URL 요청 처리 및 화면 이동)
+│   │   │               │   ├── MemberController.java      # 로그인, 회원가입 관련 요청 처리
+│   │   │               │   └── QnaController.java         # QnA 게시판 CRUD 요청 처리
+│   │   │               │
+│   │   │               ├── dto/                           # [3] 데이터 전달 객체 영역 (Data Transfer Object)
+│   │   │               │   ├── MemberJoinDto.java         # 회원가입 입력 Form 데이터
+│   │   │               │   ├── MemberResponseDto.java     # 회원 정보 응답 데이터
+│   │   │               │   └── QnaDto.java                # QnA 게시글 작성/수정/조회 데이터
+│   │   │               │
+│   │   │               ├── service/                       # [4] 비즈니스 로직 영역 (업무 규칙, 트랜잭션)
+│   │   │               │   ├── MemberService.java         # 회원가입, 비밀번호 암호화, 로그인 검증
+│   │   │               │   ├── CustomUserDetailsService.java # Spring Security 연동 유저 인증
+│   │   │               │   └── QnaService.java            # 게시글 등록, 수정, 삭제, 조회수 증가 등
+│   │   │               │
+│   │   │               ├── repository/                    # [5] 데이터베이스 접근 영역 (JdbcTemplate 사용)
+│   │   │               │   ├── MemberRepository.java      # 회원 테이블 SQL 처리
+│   │   │               │   └── QnaRepository.java         # QnA 게시판 테이블 SQL 처리
+│   │   │               │
+│   │   │               └── HomepickApplication.java       # 메인 실행 클래스
+│   │   │
+│   │   └── resources/
+│   │       ├── static/                                    # 정적 자원 (브라우저 직접 접근)
+│   │       │   ├── css/
+│   │       │   │   └── style.css                          # 공통 스타일시트
+│   │       │   ├── js/
+│   │       │   └── images/
+│   │       │
+│   │       ├── templates/                                 # Thymeleaf HTML 템플릿
+│   │       │   ├── member/                                # 회원 관련 화면
+│   │       │   │   ├── login.html                         # 로그인 페이지
+│   │       │   │   └── join.html                          # 회원가입 페이지
+│   │       │   │
+│   │       │   └── qna/                                   # QnA 게시판 관련 화면
+│   │       │       ├── list.html                          # 게시글 목록 화면
+│   │       │       ├── detail.html                        # 게시글 상세 보기 화면
+│   │       │       └── form.html                          # 게시글 작성 및 수정 화면
+│   │       │
+│   │       └── application.properties                     # DB(MySQL/TiDB) 접속 정보 및 애플리케이션 설정
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── render/
+│                   └── homepick/
+│                       └── HomepickApplicationTests.java  # 단위 테스트 클래스
+│
+└── build.gradle                                           # Gradle 의존성 설정 파일
+
+
+1.config/: Security 필터 체인 설정, 비밀번호 암호화 객체(PasswordEncoder) 생성 등 전체 애플리케이션 설정을 관리합니다.
+2.controller/: 사용자의 HTTP 요청(GET,POST)을 수신하고, 화면(templates/..) 반환 및 API 응답을 제어합니다.
+3.dto/: 계층 간(HTML ↔ Controller ↔ Service) 데이터 전송 시 필요한 순수 데이터 객체입니다.
+4.service/: 회원 중복 검사, 비밀번호 인코딩, 게시글 권한 체크 등 실제 비즈니스 규칙과 연산을 수행합니다.
+5.repository/:JdbcTemplate을 이용해 DB(MySQL / TiDB)에 Direct SQL Query(INSERT,SELECT,UPDATE,DELETE)를 전송합니다.
