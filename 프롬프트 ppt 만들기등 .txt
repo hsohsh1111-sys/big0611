@@ -464,3 +464,28 @@ ppt 작성 후 chat gpt 수정작업
 4. 필요하다면 핵심 수치, 비교 표(Table), 인용문 형식도 포함해 줘.
 
 "(각 슬라이드에 어울리는 이미지 키워드나 그래프 형태도 [시각 자료 추천]으로 적어줘)"
+
+Firebase 콘솔
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCUU_OSW6eUdpGy90ahTOIwDV2aIngLY18",
+    authDomain: "housepick-7bd77.firebaseapp.com",
+    projectId: "housepick-7bd77",
+    storageBucket: "housepick-7bd77.firebasestorage.app",
+    messagingSenderId: "436680039201",
+    appId: "1:436680039201:web:f0a51fa25464221cfa3c60",
+    measurementId: "G-RKJYXKK82W"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
